@@ -1,13 +1,54 @@
 header{
+    position: fixed;
     width: 1512px;
     height: 98px;
     line-height: 98px;
     background-color: #373867;
+    top: 0;
 }
 
+aside{
+    position: fixed;
+    top: 98px;
+    background-color: #AACE9B;
+    width: 313px;
+    height: 100%;
+    float: left;
+
+}
+
+nav a{
+    background-color: white;
+    display: block;
+    width: 263px;
+    height: 37.69px;
+    margin: auto;
+    margin-top: 15px;
+    text-align: center;
+    line-height: 37.69px;
+    border: 1.5px solid #373867;
+    border-radius: 5px;
+}
+
+main{
+    margin-left: 413px;
+}
 #logo{
     vertical-align: middle;
     width: 194px;
     height: 41px;
     margin-left: 29px;
+}
+
+.contact-info{
+    position: relative;
+    margin-top: 550px;
+    text-align: center;
+    color: white;
+    text-decoration: underline;
+}
+
+.contact-info ul{
+    text-align: left;
+
 }
