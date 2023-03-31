@@ -1,0 +1,13 @@
+header{
+    width: 1512px;
+    height: 98px;
+    line-height: 98px;
+    background-color: #373867;
+}
+
+#logo{
+    vertical-align: middle;
+    width: 194px;
+    height: 41px;
+    margin-left: 29px;
+}
