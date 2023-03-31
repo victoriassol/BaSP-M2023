@@ -28,10 +28,85 @@ nav a{
     line-height: 37.69px;
     border: 1.5px solid #373867;
     border-radius: 5px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 876;
+    font-size: 20px;
+    color: #373867;
+    
 }
 
 main{
     margin-left: 413px;
+}
+
+h1{
+    font-family: Roboto;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 47px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #373867;
+}
+
+h2{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 35px;
+    color: #373867;
+    text-align: center;
+}
+
+h3{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 876;
+    font-size: 24px;
+    line-height: 28px;
+    text-transform: capitalize;
+    color: #373867;
+}
+
+p{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+    color:#373867
+}
+
+form{
+    font-family: 'Roboto';
+font-style: normal;
+font-weight: 500;
+font-size: 14px;
+line-height: 16px;
+color: #373867;
+}
+
+table{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 100%;
+    display: flex;
+    align-items: center;
+    color: #373867;
+}
+
+footer{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    color: #FFFFFF;
+    background-color: #373867;
 }
 #logo{
     vertical-align: middle;
@@ -43,12 +118,46 @@ main{
 .contact-info{
     position: relative;
     margin-top: 550px;
+    color: white
+}
+
+.contact-info h3{
+    font-family: Roboto;
+    font-size: 20px;
+    font-weight: 876;
+    line-height: 23px;
+    letter-spacing: 0em;
     text-align: center;
-    color: white;
+    font-variation-settings: 'wdth' 100;
     text-decoration: underline;
 }
 
 .contact-info ul{
+    font-family: Roboto;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 23px;
+    letter-spacing: 0em;
     text-align: left;
+    color: #373867;
 
+}
+
+#welcome{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+    color: #49A37B
+}
+
+.list-activities{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 876;
+    font-size: 24px;
+    line-height: 28px;
+    text-transform: capitalize;
+    color: #373867;
 }
