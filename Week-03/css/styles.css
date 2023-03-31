@@ -100,13 +100,23 @@ table{
 }
 
 footer{
+    height: 72px;
+    text-align: center;
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 700;
     font-size: 14px;
-    line-height: 16px;
-    color: #FFFFFF;
-    background-color: #373867;
+    background-color:#AACE9B;
+}
+
+footer ul li{
+    display: inline-block;
+    padding-left: 10px;
+    margin-top: 10px;
+}
+
+footer p{
+    color: white;
 }
 #logo{
     vertical-align: middle;
@@ -117,11 +127,13 @@ footer{
 
 .contact-info{
     position: relative;
-    margin-top: 550px;
-    color: white
+    margin-top: 450px;
 }
 
 .contact-info h3{
+    position: relative;
+    
+    margin-bottom: 40px;
     font-family: Roboto;
     font-size: 20px;
     font-weight: 876;
@@ -130,6 +142,7 @@ footer{
     text-align: center;
     font-variation-settings: 'wdth' 100;
     text-decoration: underline;
+    color: white
 }
 
 .contact-info ul{
@@ -141,6 +154,24 @@ footer{
     text-align: left;
     color: #373867;
 
+}
+
+.contact-info ul img{
+    
+    margin-left: 20px;
+    margin-right: 10px;
+    width: 15px;
+    height: 15px;
+}
+
+#icon-phone{
+    transform:perspective(-45);
+    width: 20px;
+    height: 20px;
+}
+
+.contact-info ul li{
+    margin-top: 20px;
 }
 
 #welcome{
@@ -160,4 +191,6 @@ footer{
     line-height: 28px;
     text-transform: capitalize;
     color: #373867;
+    list-style-type: circle;
+    margin-left: 50px;
 }
