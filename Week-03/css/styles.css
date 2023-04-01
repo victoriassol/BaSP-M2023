@@ -56,6 +56,7 @@ h1{
 }
 
 h2{
+    margin-bottom: 50px;
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 700;
@@ -95,6 +96,10 @@ form{
     font-size: 14px;
     line-height: 16px;
     color: #373867;
+}
+
+label{
+    margin-bottom: 10px;
 }
 
 table{
@@ -212,7 +217,6 @@ footer p{
 }
 
 #section-features{
-    clear:both;
     margin-bottom: 500px;
 }
 
@@ -252,10 +256,6 @@ footer p{
     margin-left: 50px;
 }
 
-#section-about{
-    clear:both;
-}
-
 .row-2{
     clear: both;
     margin-top: 300px;
@@ -291,6 +291,64 @@ footer p{
     float: left
 }
 
-#section-intouch{
-    clear: both;
+.form-column-1 *, .form-column-2 *{
+    display: block;
+    width: 100%;
+}
+
+.form-column-1, .form-column-2{
+    float: left
+}
+
+.form-column-1{
+    position: relative;
+    left: 100px;
+    width: 260px;
+    
+}
+
+.form-column-2{
+    position: relative;
+    width: 566px;
+    left: 170px;
+}
+
+input, select{
+    box-sizing:border-box;
+    border: 1px solid #373867;
+    border-radius: 4px;
+    height: 37px;
+    margin-bottom: 25px;
+}
+
+input::placeholder{
+    padding-left: 10px;
+    color: #373867;
+    opacity: 0.5;
+}
+
+#message{
+    height: 191.6px;
+    border: 1px solid #373867;
+    border-radius: 4px;
+}
+
+#message::placeholder{
+    padding-left: 10px;
+    padding-top: 10px;
+    color: #373867;
+    opacity: 0.5;
+}
+
+#submit{
+    width: 123px;
+    height: 47px;
+    background: #AACE9B;
+    border-radius: 5px;
+    border: none;
+    color: #373867;
+}
+
+section{
+    clear: both
 }
