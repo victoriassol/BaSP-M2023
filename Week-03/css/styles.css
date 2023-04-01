@@ -213,6 +213,7 @@ footer p{
 
 #section-features{
     clear:both;
+    margin-bottom: 500px;
 }
 
 #section-features h3{
@@ -222,8 +223,6 @@ footer p{
 }
 
 #section-features h3 img{
-    display: inline-block;
-    
     transform: translateY(10px);
 }
 
@@ -255,4 +254,43 @@ footer p{
 
 #section-about{
     clear:both;
+}
+
+.row-2{
+    clear: both;
+    margin-top: 300px;
+    margin-bottom: 550px;
+}
+
+.row-1{
+    margin-top: 60px;
+}
+
+.row-1 img {
+    float:left
+    
+}
+
+.row-1 p {
+    margin-left: 10px;
+    margin-top: 20px;
+    text-align: right;
+    width: 550px;
+    float:left
+}
+
+.row-2 img {
+    float: left
+    
+}
+
+.row-2 p {
+    margin-right: 10px;
+    margin-top: 20px;
+    width: 550px;
+    float: left
+}
+
+#section-intouch{
+    clear: both;
 }
