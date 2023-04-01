@@ -84,13 +84,17 @@ p{
     color:#373867
 }
 
+section{
+    margin-top: 60px;
+}
+
 form{
     font-family: 'Roboto';
-font-style: normal;
-font-weight: 500;
-font-size: 14px;
-line-height: 16px;
-color: #373867;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    color: #373867;
 }
 
 table{
@@ -191,7 +195,9 @@ footer p{
 
 
 #section-welcome img{
-    float: right
+    
+    float: left;
+    margin-bottom: 60px;
 }
 
 #welcome{
@@ -206,9 +212,35 @@ footer p{
 }
 
 #section-features{
-    clear:both
+    clear:both;
 }
 
+#section-features h3{
+    width: 500px;
+    margin-bottom: 25px;
+    transform: translateX(-50px);
+}
+
+#section-features h3 img{
+    display: inline-block;
+    
+    transform: translateY(10px);
+}
+
+#section-features .column-1, .column-2{
+    width: 350px;
+    margin-left: 60px;
+    float: left;
+}
+
+#section-features .column-2{
+    margin-left: 230px;
+}
+
+#section-features article{
+    margin-top: 30px;
+
+}
 .list-activities{
     font-family: 'Roboto';
     font-style: normal;
@@ -219,4 +251,8 @@ footer p{
     color: #373867;
     list-style-type: circle;
     margin-left: 50px;
+}
+
+#section-about{
+    clear:both;
 }
