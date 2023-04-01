@@ -87,6 +87,7 @@ p{
 
 section{
     margin-top: 60px;
+    clear: both
 }
 
 form{
@@ -244,17 +245,6 @@ footer p{
     margin-top: 30px;
 
 }
-.list-activities{
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 876;
-    font-size: 24px;
-    line-height: 28px;
-    text-transform: capitalize;
-    color: #373867;
-    list-style-type: circle;
-    margin-left: 50px;
-}
 
 .row-2{
     clear: both;
@@ -349,6 +339,25 @@ input::placeholder{
     color: #373867;
 }
 
-section{
-    clear: both
+.list-activities{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 876;
+    font-size: 24px;
+    line-height: 28px;
+    text-transform: capitalize;
+    color: #373867;
+    margin-left: 50px;
+    float: left;
+    margin-left: 120px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.list-activities li{
+    padding-bottom: 10px;
+}
+
+#section-activities img{
+    margin-left: 150px;
 }
