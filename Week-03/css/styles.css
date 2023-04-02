@@ -5,6 +5,7 @@ header{
     line-height: 98px;
     background-color: #373867;
     top: 0;
+    z-index: 1;
 }
 
 aside{
@@ -14,7 +15,6 @@ aside{
     width: 313px;
     height: 100%;
     float: left;
-
 }
 
 nav a{
@@ -33,7 +33,6 @@ nav a{
     font-weight: 876;
     font-size: 20px;
     color: #373867;
-    
 }
 
 main{
@@ -51,7 +50,6 @@ h1{
     text-align: center;
     margin-top: 60px;
     margin-bottom: 0;
-    padding: 0;
     color: #373867;
 }
 
@@ -64,6 +62,8 @@ h2{
     line-height: 35px;
     color: #373867;
     text-align: center;
+    text-decoration: underline #49A37B 3px;
+    text-underline-offset: 8px;
 }
 
 h3{
@@ -87,7 +87,7 @@ p{
 
 section{
     margin-top: 60px;
-    clear: both
+    margin-bottom: 60px;
 }
 
 form{
@@ -133,6 +133,7 @@ th{
 .custom-table-1{
     width: 450px;
 }
+
 footer{
     height: 72px;
     text-align: center;
@@ -152,6 +153,7 @@ footer ul li{
 footer p{
     color: white;
 }
+
 #logo{
     vertical-align: middle;
     width: 194px;
@@ -166,7 +168,6 @@ footer p{
 
 .contact-info h3{
     position: relative;
-    
     margin-bottom: 40px;
     font-family: Roboto;
     font-size: 20px;
@@ -179,7 +180,7 @@ footer p{
     color: white
 }
 
-.contact-info ul{
+.contact-info a{
     font-family: Roboto;
     font-size: 20px;
     font-weight: 400;
@@ -187,11 +188,9 @@ footer p{
     letter-spacing: 0em;
     text-align: left;
     color: #373867;
-
 }
 
 .contact-info ul img{
-    
     margin-left: 20px;
     margin-right: 10px;
     width: 15px;
@@ -214,15 +213,8 @@ footer p{
     text-align: center;
 }
 
-#section-welcome div p{
-    margin-top: 30px;
-}
-
-
 #section-welcome img{
-    
     float: left;
-    margin-bottom: 60px;
 }
 
 #welcome{
@@ -231,18 +223,12 @@ footer p{
     font-weight: 400;
     font-size: 20px;
     line-height: 23px;
-    margin-top:0px;
     color: #49A37B;
-    
-}
-
-#section-features{
-    margin-bottom: 500px;
+    text-decoration: none;
 }
 
 #section-features h3{
     width: 500px;
-    margin-bottom: 25px;
     transform: translateX(-50px);
 }
 
@@ -260,23 +246,12 @@ footer p{
     margin-left: 230px;
 }
 
-#section-features article{
-    margin-top: 30px;
-
-}
-
 .row-2{
     clear: both;
-    margin-top: 300px;
-    margin-bottom: 550px;
-}
-
-.row-1{
-    margin-top: 60px;
 }
 
 .row-1 img {
-    float:left
+    float: left
     
 }
 
@@ -285,7 +260,7 @@ footer p{
     margin-top: 20px;
     text-align: right;
     width: 550px;
-    float:left
+    float: left
 }
 
 .row-2 img {
@@ -370,7 +345,6 @@ input::placeholder{
     float: left;
     margin-left: 120px;
     margin-top: 30px;
-    margin-bottom: 20px;
 }
 
 .list-activities li{
@@ -379,4 +353,8 @@ input::placeholder{
 
 #section-activities img{
     margin-left: 150px;
+}
+
+.clear{
+    clear:both
 }
