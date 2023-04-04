@@ -2,41 +2,19 @@ header{
     position: fixed;
     width: 1512px;
     height: 98px;
-    line-height: 98px;
-    background-color: #373867;
     top: 0;
+    background-color: #373867;
     z-index: 1;
+    line-height: 98px;
 }
 
 aside{
     position: fixed;
     top: 98px;
-    background-color: #AACE9B;
     width: 313px;
     height: 100%;
+    background-color: #AACE9B;
     float: left;
-}
-
-.button-nav{
-    background-color: white;
-    display: block;
-    width: 263px;
-    height: 37.69px;
-    margin: auto;
-    margin-top: 15px;
-    text-align: left;
-    line-height: 37.69px;
-    border: 1.5px solid #373867;
-    border-radius: 5px;
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 876;
-    font-size: 20px;
-    color: #373867;
-}
-
-.button-nav a{
-    margin-left: 80px;
 }
 
 nav img{
@@ -50,25 +28,25 @@ main{
 }
 
 h1{
+    margin-top: 60px;
+    margin-bottom: 0;
     font-family: Roboto;
     font-size: 40px;
     font-weight: 700;
     line-height: 47px;
     letter-spacing: 0em;
     text-align: center;
-    margin-top: 60px;
-    margin-bottom: 0;
     color: #373867;
 }
 
 h2{
     margin-bottom: 50px;
+    color: #373867;
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 700;
     font-size: 30px;
     line-height: 35px;
-    color: #373867;
     text-align: center;
     text-decoration: underline #49A37B 3px;
     text-underline-offset: 8px;
@@ -112,40 +90,57 @@ label{
 }
 
 table{
+    display: flex;
     width: 981.55px;
+    align-items: center;
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 600;
     font-size: 14px;
     line-height: 100%;
+    line-height: 100%;
+    display: flex;
+    align-items: center;
+    color: #373867;
+    line-height: 100%;    
     display: flex;
     align-items: center;
     color: #373867;
     text-align: center;
+    color: #373867;
     border-collapse: collapse;
 }
 
 td, th{
     padding: 20px;
 }
-tr:nth-child(odd) {background-color: #f2f2f2;}
+
+tr:nth-child(odd) {
+    background-color: #f2f2f2;
+}
+
 th{
     background-color: #f2f2f2;
-    
 }
 
-.custom-table{
-    width: 130px
+input, select{
+    box-sizing:border-box;
+    height: 37px;
+    margin-bottom: 25px;    
+    border: 1px solid #373867;
+    border-radius: 4px;
 }
 
-.custom-table-1{
-    width: 450px;
+input::placeholder{
+    padding-left: 10px;
+    color: #373867;
+    opacity: 0.5;
 }
 
 footer{
+    position: absolute;
     width: 1200px;
     height: 72px;
-    position: absolute;
     right: 0;
     text-align: center;
     font-family: 'Roboto';
@@ -166,10 +161,32 @@ footer p{
 }
 
 #logo{
-    vertical-align: middle;
     width: 194px;
     height: 41px;
-    margin-left: 29px;
+    margin-left: 29px;    
+    vertical-align: middle;
+}
+
+.button-nav{
+    display: block;
+    width: 263px;
+    height: 37.69px;
+    margin: auto;
+    margin-top: 15px;
+    text-align: left;
+    line-height: 37.69px;
+    border: 1.5px solid #373867;
+    border-radius: 5px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 876;
+    font-size: 20px;    
+    background-color: white;
+    color: #373867;
+}
+
+.button-nav a{
+    margin-left: 80px;
 }
 
 .contact-info{
@@ -190,16 +207,17 @@ footer p{
     color: white
 }
 
-.contact-info li{
-    text-decoration: none;
+.contact-info li{    
+    margin-left: 10px;
     font-family: Roboto;
     font-size: 20px;
     font-weight: 400;
     line-height: 23px;
     letter-spacing: 0em;
-    color: #373867;
-    margin-left: 10px;
+    color: #373867;    
+    text-decoration: none;
 }
+
 .contact-info ul img{
     margin-right: 5px;
     width: 15px;
@@ -207,9 +225,9 @@ footer p{
 }
 
 #icon-phone{
-    transform:perspective(-45);
     width: 20px;
-    height: 20px;
+    height: 20px;    
+    transform:perspective(-45);
 }
 
 .contact-info ul li{
@@ -223,8 +241,8 @@ footer p{
 }
 
 #section-welcome img{
-    float: left;
     margin-left: 30px;
+    float: left;
 }
 
 #welcome{
@@ -253,9 +271,9 @@ footer p{
 #section-features img{
     vertical-align: middle;
 }
+
 #section-features .column-1, .column-2{
     width: 350px;
-    margin-left: 60px;
     float: left;
 }
 
@@ -273,10 +291,10 @@ footer p{
 }
 
 .row-1 p {
+    width: 550px;
     margin-left: 10px;
     margin-top: 20px;
     text-align: right;
-    width: 550px;
     float: left
 }
 
@@ -314,20 +332,6 @@ footer p{
     left: 170px;
 }
 
-input, select{
-    box-sizing:border-box;
-    border: 1px solid #373867;
-    border-radius: 4px;
-    height: 37px;
-    margin-bottom: 25px;
-}
-
-input::placeholder{
-    padding-left: 10px;
-    color: #373867;
-    opacity: 0.5;
-}
-
 #message{
     height: 191.6px;
     border: 1px solid #373867;
@@ -350,7 +354,9 @@ input::placeholder{
     color: #373867;
 }
 
-.list-activities{
+.list-activities{    
+    margin-left: 120px;
+    margin-top: 30px;
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 876;
@@ -358,10 +364,7 @@ input::placeholder{
     line-height: 28px;
     text-transform: capitalize;
     color: #373867;
-    margin-left: 50px;
     float: left;
-    margin-left: 120px;
-    margin-top: 30px;
 }
 
 .list-activities li{
@@ -374,4 +377,12 @@ input::placeholder{
 
 .clear{
     clear:both
+}
+
+.custom-table{
+    width: 130px
+}
+
+.custom-table-1{
+    width: 450px;
 }
