@@ -17,14 +17,14 @@ aside{
     float: left;
 }
 
-nav a{
+.button-nav{
     background-color: white;
     display: block;
     width: 263px;
     height: 37.69px;
     margin: auto;
     margin-top: 15px;
-    text-align: center;
+    text-align: left;
     line-height: 37.69px;
     border: 1.5px solid #373867;
     border-radius: 5px;
@@ -33,6 +33,14 @@ nav a{
     font-weight: 876;
     font-size: 20px;
     color: #373867;
+}
+
+.button-nav a{
+    margin-left: 80px;
+}
+
+nav img{
+    padding-right: 10px;
 }
 
 main{
@@ -135,7 +143,10 @@ th{
 }
 
 footer{
+    width: 1200px;
     height: 72px;
+    position: absolute;
+    right: 0;
     text-align: center;
     font-family: 'Roboto';
     font-style: normal;
@@ -162,7 +173,6 @@ footer p{
 }
 
 .contact-info{
-    position: relative;
     margin-top: 450px;
 }
 
@@ -180,19 +190,18 @@ footer p{
     color: white
 }
 
-.contact-info a{
+.contact-info li{
+    text-decoration: none;
     font-family: Roboto;
     font-size: 20px;
     font-weight: 400;
     line-height: 23px;
     letter-spacing: 0em;
-    text-align: left;
     color: #373867;
+    margin-left: 10px;
 }
-
 .contact-info ul img{
-    margin-left: 20px;
-    margin-right: 10px;
+    margin-right: 5px;
     width: 15px;
     height: 15px;
 }
@@ -208,13 +217,14 @@ footer p{
 }
 
 #section-welcome div{
-    width: 500px;
+    width: 490px;
     float: left;
     text-align: center;
 }
 
 #section-welcome img{
     float: left;
+    margin-left: 30px;
 }
 
 #welcome{
@@ -227,15 +237,22 @@ footer p{
     text-decoration: none;
 }
 
+#section-features article:nth-child(odd){
+    margin-bottom: 50px;
+}
+
 #section-features h3{
     width: 500px;
-    transform: translateX(-50px);
 }
 
-#section-features h3 img{
-    transform: translateY(10px);
+#section-features p{
+    margin-left: 50px;
+    width: 400px;
 }
 
+#section-features img{
+    vertical-align: middle;
+}
 #section-features .column-1, .column-2{
     width: 350px;
     margin-left: 60px;
