@@ -138,10 +138,9 @@ input::placeholder{
 }
 
 footer{
-    position: absolute;
     width: 1200px;
     height: 72px;
-    right: 0;
+    margin-left: 313px;
     text-align: center;
     font-family: 'Roboto';
     font-style: normal;
@@ -187,6 +186,7 @@ footer p{
 
 .button-nav a{
     margin-left: 80px;
+    color: #373867;
 }
 
 .contact-info{
@@ -207,19 +207,18 @@ footer p{
     color: white
 }
 
-.contact-info li{    
+.contact-info li{
     margin-left: 10px;
     font-family: Roboto;
     font-size: 20px;
     font-weight: 400;
     line-height: 23px;
     letter-spacing: 0em;
-    color: #373867;    
+    color: #373867;
     text-decoration: none;
 }
 
 .contact-info ul img{
-    margin-right: 5px;
     width: 15px;
     height: 15px;
 }

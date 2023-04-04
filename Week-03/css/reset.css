@@ -196,7 +196,11 @@
   /**
    * Correct the inability to style clickable types in iOS and Safari.
    */
-  
+   a, a:hover, a:focus, a:active {
+    text-decoration: none;
+    color: inherit;
+}
+
   button,
   [type="button"],
   [type="reset"],
