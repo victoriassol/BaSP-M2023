@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/Week-03/css/reset.css">
+    <link rel="stylesheet" href="/Week-03/css/styles.css">
+    <title>MegaRocket Landing Page</title>
+</head>
+<body>
+    <header>
+       <img src="Assets/img/logo.png" alt="MegaRocket logo" id="logo"> 
+    </header>
+    <aside>
+        <nav>
+            <div class="button-nav">
+                <a href="#"><img src="Assets/img/home.svg" alt="Home" width="18px" height="18px">Home</a>
+            </div>
+            <div class="button-nav">
+                <a href="#"><img src="Assets/img/log-sign-in.svg" alt="">Sign up</a>
+            </div>
+            <div class="button-nav">
+                <a href="#"><img src="Assets/img/login.svg" alt="">Sign in</a>
+            </div>   
+        </nav>
+        <div class="contact-info">
+            <h3>
+                Contact information
+            </h3>
+            <ul>
+                <li>
+                    <img src="Assets/img/mail.svg" alt="">
+                    <a href="#">information@untitled.tld</a>
+                </li>
+                <li>
+                    <img src="Assets/img/phone.svg" alt="" id="icon-phone">
+                    <a href="#">(000) 000-0000</a>
+                </li>
+                <li>
+                    <img src="Assets/img/home.svg" alt="">
+                    1234 Somewhere Road #8254 Nashville, TN
+                </li>
+            </ul>
+        </div>
+    </aside>
+    <main>
+        <section id="section-welcome">
+            <div>
+                <h1>MEGA ROCKET WEB</h1>
+                <h2 id="welcome">WELCOME</h2>
+                <p>Mega Rocket web is a monthly management system for members and trainers so that they can dynamically sign up for their activities in the gym</p>
+            </div>            
+            <img src="Assets/img/img1.svg" alt="">
+        </section>
+        <div class="clear"></div>
+        <section id="section-features">
+            <h2>Features</h2>
+                <div class="column-1">
+                    <article>
+                        <h3><img src="Assets/img/reservations.svg" alt="Calendar"> Shift Reservations</h3>
+                        <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
+                    </article>
+                    <article>
+                        <h3><img src="Assets/img/scheduling.svg" alt="Calendar"> Scheduling & opening hours</h3>
+                        <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
+                    </article>
+                </div>
+                <div class="column-2">
+                    <article>
+                        <h3><img src="Assets/img/membership.svg" alt="Card"> Membership management</h3>
+                        <p>Aenean ornare
+                             velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
+                    </article>
+                    <article>
+                        <h3><img src="Assets/img/contact.svg" alt="Envelope"> Contact form & suggestions</h3>
+                        <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
+                    </article>
+                </div>                
+        </section>
+        <div class="clear"></div>
+        <section id="section-about">
+            <h2>About Mega Rocket</h2>
+            <article class="row-1">
+                <img src="Assets/img/img2.svg" alt="Gym with machines">
+                <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam. Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam. Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
+            </article>
+            <article class="row-2">
+                <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam. Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam. Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
+                <img src="Assets/img/img3.svg" alt="A person running on a treadmill looking out some big windows">
+            </article>
+        </section>
+        <div class="clear"></div>
+        <section id="section-intouch">
+            <h2>Get in Touch</h2>
+            <form action="submit">
+                <div class="form-column-1">
+                    <label for="firstname">First name</label>
+                    <input id="firstname" type="text" placeholder="Enter name" name="firstname">
+                    <label for="lastname">Last name</label>
+                    <input id="lastname" type="text" placeholder="Enter last name" name="lastname">
+                    <label for="email">Email address</label>
+                    <input id="email" type="email" placeholder="Enter address" name="email">
+                    <input type="submit" value="Submit" id="submit"/>
+                </div>
+                <div class="form-column-2">
+                    <label for="reason">Contact reason</label>
+                    <select id="reason" name="reason" required>
+                        <option value="" selected disabled >Choose a contact reason</option>
+                        <option value="I want to make a claim">I want to make a claim</option>
+                        <option value="I want to realize a query or suggestion">I want to realize a query or suggestion</option>
+                        <option value="I want to know the memberships and costs">I want to know the memberships and costs</option>
+                      </select>
+                    <label for="message">Message</label>
+                    <textarea id="message" placeholder="Enter your message" name="message"></textarea>
+                </div>
+            </form>
+        </section>
+        <div class="clear"></div>
+        <section id="section-activities">
+            <h2>Gym activities</h2>
+            <ul class="list-activities">
+                <li>Crossfit</li>
+                <li>Spinning</li>
+                <li>Functional</li>
+                <li>Fitness</li>
+                <li>Boxing</li>
+            </ul>
+            <img src="Assets/img/img4.svg" alt="Panoramic view of a gym with bikes">
+        </section>
+        <div class="clear"></div>
+        <section>
+            <h2>Memberships</h2>
+            <table>
+                <tr>
+                    <th class="custom-table-1"></th>
+                    <th class="custom-table">Only classes</th>
+                    <th class="custom-table">Classic</th>
+                    <th class="custom-table">Black</th>
+                </tr>
+                <tr>
+                    <td class="custom-table-1">Free access to the fitness room</td>
+                    <td class="custom-table"><img src="Assets/img/cross.svg" alt="Cross"></td>
+                    <td class="custom-table"><img src="Assets/img/check.svg" alt="Check"></td>
+                    <td class="custom-table"><img src="Assets/img/check.svg" alt="Check"></td>
+                </tr>
+                <tr>
+                    <td class="custom-table-1">Free access to classes prior enrollment</td>
+                    <td class="custom-table"><img src="Assets/img/check.svg" alt="Check"></td>
+                    <td class="custom-table"><img src="Assets/img/cross.svg" alt="Cross"></td>
+                    <td class="custom-table"><img src="Assets/img/check.svg" alt="Check"></td>
+                </tr>
+                <tr>
+                    <td class="custom-table-1">Personalised follow-up by a trainer</td>
+                    <td class="custom-table"><img src="Assets/img/cross.svg" alt="Cross"></td>
+                    <td class="custom-table"><img src="Assets/img/check.svg" alt="Check"></td>
+                    <td class="custom-table"><img src="Assets/img/check.svg" alt="Check"></td>
+                </tr>
+                <tr>
+                    <td class="custom-table-1">Schedulling visualization</td>
+                    <td class="custom-table"><img src="Assets/img/check.svg" alt="Check"></td>
+                    <td class="custom-table"><img src="Assets/img/check.svg" alt="Check"></td>
+                    <td class="custom-table"><img src="Assets/img/check.svg" alt="Check"></td>
+                </tr>
+            </table>
+        </section>
+    </main>
+    <footer>
+        <ul>
+            <li><a href="#"><img src="Assets/img/Linkedin.svg" alt="LinkdIn logo"></a></li>
+            <li><a href="#"><img src="Assets/img/Facebook.svg" alt="Facebook logo"></a></li>
+            <li><a href="#"><img src="Assets/img/Instagram.svg" alt="Instagram logo"></a></li>
+        </ul>
+        <p>Copyright © 2022 Radium Rocket. All rights reserved.</p>
+    </footer>
+</body>
+</html>

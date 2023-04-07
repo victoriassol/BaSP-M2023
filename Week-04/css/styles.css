@@ -1,0 +1,387 @@
+header{
+    position: fixed;
+    width: 1512px;
+    height: 98px;
+    top: 0;
+    background-color: #373867;
+    z-index: 1;
+    line-height: 98px;
+}
+
+aside{
+    position: fixed;
+    top: 98px;
+    width: 313px;
+    height: 100%;
+    background-color: #AACE9B;
+    float: left;
+}
+
+nav img{
+    padding-right: 10px;
+}
+
+main{
+    margin-top: 160px;
+    margin-left: 413px;
+    margin-right: 50px;
+}
+
+h1{
+    margin-top: 60px;
+    margin-bottom: 0;
+    font-family: Roboto;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 47px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: #373867;
+}
+
+h2{
+    margin-bottom: 50px;
+    color: #373867;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 35px;
+    text-align: center;
+    text-decoration: underline #49A37B 3px;
+    text-underline-offset: 8px;
+}
+
+h3{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 876;
+    font-size: 24px;
+    line-height: 28px;
+    text-transform: capitalize;
+    color: #373867;
+}
+
+p{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+    color:#373867
+}
+
+section{
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+
+form{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    color: #373867;
+}
+
+label{
+    margin-bottom: 10px;
+}
+
+table{
+    display: flex;
+    width: 981.55px;
+    align-items: center;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 100%;
+    line-height: 100%;
+    display: flex;
+    align-items: center;
+    color: #373867;
+    line-height: 100%;    
+    display: flex;
+    align-items: center;
+    color: #373867;
+    text-align: center;
+    color: #373867;
+    border-collapse: collapse;
+}
+
+td, th{
+    padding: 20px;
+}
+
+tr:nth-child(odd) {
+    background-color: #f2f2f2;
+}
+
+th{
+    background-color: #f2f2f2;
+}
+
+input, select{
+    box-sizing:border-box;
+    height: 37px;
+    margin-bottom: 25px;    
+    border: 1px solid #373867;
+    border-radius: 4px;
+}
+
+input::placeholder{
+    padding-left: 10px;
+    color: #373867;
+    opacity: 0.5;
+}
+
+footer{
+    width: 1200px;
+    height: 72px;
+    margin-left: 313px;
+    text-align: center;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    background-color:#AACE9B;
+}
+
+footer ul li{
+    display: inline-block;
+    padding-left: 10px;
+    margin-top: 10px;
+}
+
+footer p{
+    color: white;
+}
+
+#logo{
+    width: 194px;
+    height: 41px;
+    margin-left: 29px;    
+    vertical-align: middle;
+}
+
+.button-nav{
+    display: block;
+    width: 263px;
+    height: 37.69px;
+    margin: auto;
+    margin-top: 15px;
+    text-align: left;
+    line-height: 37.69px;
+    border: 1.5px solid #373867;
+    border-radius: 5px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 876;
+    font-size: 20px;    
+    background-color: white;
+    color: #373867;
+}
+
+.button-nav a{
+    margin-left: 80px;
+    color: #373867;
+}
+
+.contact-info{
+    margin-top: 450px;
+}
+
+.contact-info h3{
+    position: relative;
+    margin-bottom: 40px;
+    font-family: Roboto;
+    font-size: 20px;
+    font-weight: 876;
+    line-height: 23px;
+    letter-spacing: 0em;
+    text-align: center;
+    font-variation-settings: 'wdth' 100;
+    text-decoration: underline;
+    color: white
+}
+
+.contact-info li{
+    margin-left: 10px;
+    font-family: Roboto;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 23px;
+    letter-spacing: 0em;
+    color: #373867;
+    text-decoration: none;
+}
+
+.contact-info ul img{
+    width: 15px;
+    height: 15px;
+}
+
+#icon-phone{
+    width: 20px;
+    height: 20px;    
+    transform:perspective(-45);
+}
+
+.contact-info ul li{
+    margin-top: 20px;
+}
+
+#section-welcome div{
+    width: 490px;
+    float: left;
+    text-align: center;
+}
+
+#section-welcome img{
+    margin-left: 30px;
+    float: left;
+}
+
+#welcome{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+    color: #49A37B;
+    text-decoration: none;
+}
+
+#section-features article:nth-child(odd){
+    margin-bottom: 50px;
+}
+
+#section-features h3{
+    width: 500px;
+}
+
+#section-features p{
+    margin-left: 50px;
+    width: 400px;
+}
+
+#section-features img{
+    vertical-align: middle;
+}
+
+#section-features .column-1, .column-2{
+    width: 350px;
+    float: left;
+}
+
+#section-features .column-2{
+    margin-left: 230px;
+}
+
+.row-2{
+    clear: both;
+}
+
+.row-1 img {
+    float: left
+    
+}
+
+.row-1 p {
+    width: 550px;
+    margin-left: 10px;
+    margin-top: 20px;
+    text-align: right;
+    float: left
+}
+
+.row-2 img {
+    float: left
+    
+}
+
+.row-2 p {
+    margin-right: 10px;
+    margin-top: 20px;
+    width: 550px;
+    float: left
+}
+
+.form-column-1 *, .form-column-2 *{
+    display: block;
+    width: 100%;
+}
+
+.form-column-1, .form-column-2{
+    float: left
+}
+
+.form-column-1{
+    position: relative;
+    left: 100px;
+    width: 260px;
+    
+}
+
+.form-column-2{
+    position: relative;
+    width: 566px;
+    left: 170px;
+}
+
+#message{
+    height: 191.6px;
+    border: 1px solid #373867;
+    border-radius: 4px;
+}
+
+#message::placeholder{
+    padding-left: 10px;
+    padding-top: 10px;
+    color: #373867;
+    opacity: 0.5;
+}
+
+#submit{
+    width: 123px;
+    height: 47px;
+    background: #AACE9B;
+    border-radius: 5px;
+    border: none;
+    color: #373867;
+}
+
+.list-activities{    
+    margin-left: 120px;
+    margin-top: 30px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 876;
+    font-size: 24px;
+    line-height: 28px;
+    text-transform: capitalize;
+    color: #373867;
+    float: left;
+}
+
+.list-activities li{
+    padding-bottom: 10px;
+}
+
+#section-activities img{
+    margin-left: 150px;
+}
+
+.clear{
+    clear:both
+}
+
+.custom-table{
+    width: 130px
+}
+
+.custom-table-1{
+    width: 450px;
+}
