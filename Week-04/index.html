@@ -97,30 +97,35 @@
                 <button class="learn-more">Learn More</button>
             </article>
         </section>
-    </main>
-        <!--
+    
         <section id="section-intouch">
             <h2>Get in Touch</h2>
             <form action="submit">
-                <label for="firstname">First name</label>
-                <input id="firstname" type="text" placeholder="Enter name" name="firstname">
-                <label for="lastname">Last name</label>
-                <input id="lastname" type="text" placeholder="Enter last name" name="lastname">
-                <label for="email">Email address</label>
-                <input id="email" type="email" placeholder="Enter address" name="email">
-                <input type="submit" value="Submit" id="submit"/>
-                <label for="reason">Contact reason</label>
-                <select id="reason" name="reason" required>
-                    <option value="" selected disabled >Choose a contact reason</option>
-                    <option value="I want to make a claim">I want to make a claim</option>
-                    <option value="I want to realize a query or suggestion">I want to realize a query or suggestion</option>
-                    <option value="I want to know the memberships and costs">I want to know the memberships and costs</option>
-                    </select>
-                <label for="message">Message</label>
-                <textarea id="message" placeholder="Enter your message" name="message"></textarea>
+                <div class="intouch-column-1">
+                    <label for="firstname">First name</label>
+                    <input id="firstname" type="text" placeholder="Enter name" name="firstname">
+                    <label for="lastname">Last name</label>
+                    <input id="lastname" type="text" placeholder="Enter last name" name="lastname">
+                    <label for="email">Email address</label>
+                    <input id="email" type="email" placeholder="Enter address" name="email">
+                    <input type="submit" value="Submit" class="submit submit-1"/>
+                </div>
+                <div class="intouch-column-2">
+                    <label for="reason">Contact reason</label>
+                    <select id="reason" name="reason" required>
+                        <option value="" selected disabled >Choose a contact reason</option>
+                        <option value="I want to make a claim">I want to make a claim</option>
+                        <option value="I want to realize a query or suggestion">I want to realize a query or suggestion</option>
+                        <option value="I want to know the memberships and costs">I want to know the memberships and costs</option>
+                        </select>
+                    <label for="message">Message</label>
+                    <textarea id="message" placeholder="Enter your message" name="message"></textarea>
+                </div>                
+                <input type="submit" value="Submit" class="submit submit-2"/>
             </form>
         </section>
-        <div class="clear"></div>
+    </main>
+    <!--
         <section id="section-activities">
             <h2>Gym activities</h2>
             <ul class="list-activities">
