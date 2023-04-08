@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/styles.css">
     <title>MegaRocket Landing Page</title>
@@ -16,6 +16,7 @@
        <img src="../Assets/img/logo.svg" alt="MegaRocket logo" id="logo">
        <img src="#" alt="" id="hamburger">
     </header>
+    <!--
     <aside class="hidden">
         <nav>
             <div class="button-nav">
@@ -47,17 +48,22 @@
                 </li>
             </ul>
         </div>
-    </aside>
+    </aside> 
+    -->
     <main>
         <section id="section-welcome">
-            <h1>MEGA ROCKET WEB</h1>
-            <h2 id="welcome">WELCOME</h2>
-            <p>Mega Rocket web is a monthly management system for members and trainers so that they can dynamically sign up for their activities in the gym</p>        
-            <img src="../Assets/img/img1.svg" alt="">
+            <div class="welcome-column-1">
+                <h1>MEGA ROCKET WEB</h1>
+                <h2 id="welcome">WELCOME</h2>
+                <p>Mega Rocket web is a monthly management system for members and trainers so that they can dynamically sign up for their activities in the gym</p>
+            </div>
+            <div class="welcome-column-2">
+                <img src="../Assets/img/img1.svg" alt="">
+            </div>            
         </section>
-        <div class="clear"></div>
         <section id="section-features">
-            <h2>Features</h2>
+            <h2 >Features</h2>
+            <div class="features-column-1">
                 <article>
                     <h3><img src="../Assets/img/reservations.svg" alt="Calendar"> Shift Reservations</h3>
                     <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
@@ -66,31 +72,33 @@
                     <h3><img src="../Assets/img/scheduling.svg" alt="Calendar"> Scheduling & opening hours</h3>
                     <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
                 </article>
+            </div>
+            <div class="features-column-2">
                 <article>
                     <h3><img src="../Assets/img/membership.svg" alt="Card"> Membership management</h3>
-                    <p>Aenean ornare
-                            velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
+                    <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
                 </article>
                 <article>
                     <h3><img src="../Assets/img/contact.svg" alt="Envelope"> Contact form & suggestions</h3>
                     <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
                 </article>
+            </div>
         </section>
-        <div class="clear"></div>
         <section id="section-about">
             <h2>About Mega Rocket</h2>
-            <article class="row-1">
-                <img src="../Assets/img/img2.svg" alt="Gym with machines">
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s (...)</p>
+            <article class="about-row-1">
+                <img class="about-img" src="../Assets/img/img2.svg" alt="Gym with machines">
+                <p class="about-p">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s (...)</p>
                 <button class="learn-more">Learn More</button>
             </article>
-            <article class="row-2">
-                <img src="../Assets/img/img3.svg" alt="A person running on a treadmill looking out some big windows">
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s (...)</p>
+            <article class="about-row-2">
+                <img class="about-img" src="../Assets/img/img3.svg" alt="A person running on a treadmill looking out some big windows">
+                <p class="about-p">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s (...)</p>
                 <button class="learn-more">Learn More</button>
             </article>
         </section>
-        <div class="clear"></div>
+    </main>
+        <!--
         <section id="section-intouch">
             <h2>Get in Touch</h2>
             <form action="submit">
@@ -168,6 +176,6 @@
             <li><a href="#"><img src="../Assets/img/Instagram.svg" alt="Instagram logo"></a></li>
         </ul>
         <p>Copyright © 2022 Radium Rocket. All rights reserved.</p>
-    </footer>
+    </footer> -->
 </body>
-</html>
+</html> 
