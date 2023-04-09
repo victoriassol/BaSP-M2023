@@ -300,6 +300,7 @@ h2{
 }
 
 table{
+    margin-bottom: 10%;
     width: 100%;
     align-items: center;
     font-family: 'Roboto';
@@ -321,6 +322,27 @@ tr:nth-child(odd) {
 
 th{
     background-color: #f2f2f2;
+}
+
+footer{
+    width: 100%;
+    height: 72px;
+    text-align: center;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    background-color:#AACE9B;
+}
+
+footer ul li{
+    display: inline-block;
+    padding-left: 10px;
+    margin-top: 10px;
+}
+
+footer p{
+    color: white;
 }
 
 @media (min-width: 601px) {
