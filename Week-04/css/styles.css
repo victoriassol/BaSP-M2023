@@ -25,8 +25,8 @@ aside{
 main{
     margin: auto;
     margin-top: 0;
-    max-width: 1200px;
-    padding: 1%;
+    max-width: 1000px;
+    padding: 2%;
     text-align: center;
     overflow: auto;
 }
@@ -75,7 +75,6 @@ nav img{
     line-height: 23px;
     letter-spacing: 0em;
     text-align: center;
-    font-variation-settings: 'wdth' 100;
     text-decoration: underline;
     color: white
 }
@@ -105,8 +104,6 @@ nav img{
 .contact-info ul li{
     margin-top: 20px;
 }
-
-
 
 h1{
     font-family: Roboto;
@@ -222,15 +219,25 @@ input::placeholder{
 .welcome-column-2{
     flex-shrink: 999;
 }
+
 #section-features{
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-around;
+    text-align: left;
 }
 
-.features-column-1, .features-column-2, h2{
+#section-features article{
+    max-width: 350px;
+}
+
+#section-features article p{
+    m
+}
+h2{
     flex: 100%;
 }
+
 
 .about-row-1, .about-row-2{
     display: flex;
@@ -309,17 +316,16 @@ th{
 
 @media (min-width: 601px) {
     .welcome-column-2, .welcome-column-1{
-        flex: 50%;
+        width: 50%;
     }
 
     .welcome-column-2 img{
         min-width: 300px;
         max-width: 100%;
     }
-    .features-column-1{
-        flex: 50%
-    }
-    .features-column-2{
+
+    .features-column-1, .features-column-2{
+        max-width: fit-content;
         flex: 50%
     }
 
@@ -362,9 +368,5 @@ th{
     .welcome-column-2 img{
         min-width: 300px;
         max-width: 100%;
-    }
-
-    .welcome-column-2, .welcome-column-1{
-        flex: 50%;
     }
 }
