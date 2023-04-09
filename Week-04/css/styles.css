@@ -159,11 +159,6 @@ form{
     text-align: left;
     color: #373867;
 }
-
-.intouch-column-1, .intouch-column-2{
-    flex: 100%;
-}
-
 .intouch-column-1 *, .intouch-column-2 * {
     width: 100%;
 }
@@ -176,12 +171,17 @@ label{
     margin-bottom: 10px;
 }
 
-input, select{
+input, select, textarea{
     box-sizing:border-box;
     height: 37px;
     margin-bottom: 25px;    
     border: 1px solid #373867;
     border-radius: 4px;
+}
+
+textarea{    
+    flex: 1;
+    height: 150px;
 }
 
 input::placeholder{
@@ -191,6 +191,7 @@ input::placeholder{
 }
 
 .submit{
+    margin-bottom: 0px;
     width: 123px;
     height: 47px;
     background: #AACE9B;
@@ -334,7 +335,7 @@ th{
         flex: 50%;
     }    
 
-    #section-about p, img{
+    #section-about p, #section-about img{
         width: 50%;
     }
 
@@ -353,7 +354,11 @@ th{
     .learn-more{
         display: none;
     }
-
+    .intouch-column-1, .intouch-column-2{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
     .submit-2{
         display: none;
     }
@@ -366,10 +371,16 @@ th{
     .intouch-column-1{
         flex: 20%;
         padding: 2%;
+        padding-bottom: 0;
     }
     .intouch-column-2{
         flex: 30%;
         padding: 2%;
+        padding-bottom: 0;
+    }
+
+    textarea{        
+    margin-bottom: 0;
     }
 }
 
