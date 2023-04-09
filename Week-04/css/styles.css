@@ -1,21 +1,109 @@
-*{
-    width: 100%;
+.main-container{
+    display: flex;
+    overflow: hidden;
+    height: 100vh;
 }
-
 header{
     position: fixed;
     width: 100%;
     height: 73px;
-    top: 0;
     background-color: #373867;
     z-index: 1;
     line-height: 73px;
 }
 
+aside{
+    display: none;
+    min-width: 300px;
+    max-width: 350px;
+    margin-top: 73px;
+    height: 100%;
+    background-color: #AACE9B;
+}
+
 main{
+    max-width: 1100px;
     padding: 3%;
     text-align: center;
+    overflow: auto;
 }
+
+main *{
+    max-width: 100%;
+}
+
+nav img{
+    padding-right: 10px;
+}
+
+.button-nav{
+    display: block;
+    width: 263px;
+    height: 37.69px;
+    margin: auto;
+    margin-top: 15px;
+    text-align: left;
+    line-height: 37.69px;
+    border: 1.5px solid #373867;
+    border-radius: 5px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 876;
+    font-size: 20px;    
+    background-color: white;
+    color: #373867;
+}
+
+.button-nav a{
+    margin-left: 80px;
+    color: #373867;
+}
+
+.contact-info{
+    margin-top: 450px;
+}
+
+.contact-info h3{
+    position: relative;
+    margin-bottom: 40px;
+    font-family: Roboto;
+    font-size: 20px;
+    font-weight: 876;
+    line-height: 23px;
+    letter-spacing: 0em;
+    text-align: center;
+    font-variation-settings: 'wdth' 100;
+    text-decoration: underline;
+    color: white
+}
+
+.contact-info li{
+    margin-left: 10px;
+    font-family: Roboto;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 23px;
+    letter-spacing: 0em;
+    color: #373867;
+    text-decoration: none;
+}
+
+.contact-info ul img{
+    width: 15px;
+    height: 15px;
+}
+
+#icon-phone{
+    width: 20px;
+    height: 20px;    
+    transform:perspective(-45);
+}
+
+.contact-info ul li{
+    margin-top: 20px;
+}
+
+
 
 h1{
     font-family: Roboto;
@@ -37,7 +125,6 @@ h2{
     text-underline-offset: 8px;
 }
 
-
 h3{
     font-family: 'Roboto';
     font-style: normal;
@@ -54,7 +141,7 @@ p{
     font-weight: 400;
     font-size: 20px;
     line-height: 23px;
-    color:#373867
+    color:#373867;
 }
 
 form{
@@ -68,6 +155,14 @@ form{
     line-height: 16px;
     text-align: left;
     color: #373867;
+}
+
+.intouch-column-1, .intouch-column-2{
+    flex: 100%;
+}
+
+.intouch-column-1 *, .intouch-column-2 * {
+    width: 100%;
 }
 
 label{
@@ -140,12 +235,77 @@ input::placeholder{
     flex: 100%;
 }
 
+.list-activities{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 876;
+    font-size: 24px;
+    line-height: 28px;
+    list-style-type: disc;
+    color: #373867;
+}
+
+.list-activities li{
+    padding-bottom: 10px;
+}
+
+#section-activities{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#section-activities img{
+    max-width: 100%;
+}
+
+
+
+#welcome{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+    color: #49A37B;
+    text-decoration: none;
+}
+
+#section-features img{
+    width: 27.7px;
+}
+
+table{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 100%;
+    color: #373867;
+    border-collapse: collapse;
+}
+
+td, th{
+    padding: 20px;
+}
+
+tr:nth-child(odd) {
+    background-color: #f2f2f2;
+}
+
+th{
+    background-color: #f2f2f2;
+}
+
 @media (min-width: 601px) {
     .welcome-column-1{
-        flex: 50%
+        flex: 50%;
     }
     .welcome-column-2{
-        flex: 50%
+        flex: 50%;
     }
     .features-column-1{
         flex: 50%
@@ -169,25 +329,24 @@ input::placeholder{
     .submit-2{
         display: none;
     }
-    .submit-2{
-        display:block;
+    .submit-1{
+        display: block;
+    }
+    form{
+        padding: 0%;
+    }
+    .intouch-column-1{
+        flex: 20%;
+        padding: 2%;
+    }
+    .intouch-column-2{
+        flex: 30%;
+        padding: 2%;
     }
 }
 
-#welcome{
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 23px;
-    color: #49A37B;
-    text-decoration: none;
-}
-
-.hidden{
-    display: none;
-}
-
-#section-features img{
-    width: 27.7px;
+@media (min-width: 1025px){ 
+    aside{
+        display: block;
+    }
 }
