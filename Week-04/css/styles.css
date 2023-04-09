@@ -1,7 +1,10 @@
+body {
+    height: 100vh;
+  }
+
 .main-container{
     display: flex;
-    overflow: hidden;
-    height: 100vh;
+    height: 100%;
 }
 
 header{
@@ -15,20 +18,20 @@ header{
 
 aside{
     display: none;
+    width: 25%;
     min-width: 300px;
-    max-width: 350px;
     margin-top: 73px;
-    height: 100%;
     background-color: #AACE9B;
 }
 
 main{
+    width: 85%;
     margin: auto;
     margin-top: 0;
     max-width: 1000px;
     padding: 2%;
     text-align: center;
-    overflow: auto;
+    overflow: scroll;
 }
 
 main *{
@@ -165,6 +168,10 @@ form{
     width: 100%;
 }
 
+.about-p-desktop{
+    display: none;
+}
+
 label{
     margin-bottom: 10px;
 }
@@ -216,9 +223,6 @@ input::placeholder{
     align-self: center;
 }
 
-.welcome-column-2{
-    flex-shrink: 999;
-}
 
 #section-features{
     display: flex;
@@ -231,22 +235,20 @@ input::placeholder{
     max-width: 350px;
 }
 
-#section-features article p{
-    m
-}
 h2{
     flex: 100%;
 }
 
+#section-about{
+    display: flex;
+    flex-wrap: wrap;
+}
 
 .about-row-1, .about-row-2{
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-}
-
-.about-img, .about-p{
-    flex: 100%;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .list-activities{
@@ -315,32 +317,43 @@ th{
 }
 
 @media (min-width: 601px) {
+    main{
+        width: 100%;
+    }
+
     .welcome-column-2, .welcome-column-1{
-        width: 50%;
+        flex: 50%;
     }
 
     .welcome-column-2 img{
-        min-width: 300px;
         max-width: 100%;
     }
 
     .features-column-1, .features-column-2{
         max-width: fit-content;
-        flex: 50%
+        flex: 50%;
+    }    
+
+    #section-about p, img{
+        width: 50%;
     }
 
-    .about-row-1, .about-row-2{
-        flex-wrap: nowrap;
+    .about-row-1 p{
+        text-align: right;
     }
-    .about-img, .about-p{
-        flex: 50%;
+    
+    .about-row-2 p{
+        text-align: left;
     }
-    .about-img{
-        max-width: 50%;
+    
+    .about-row-2 img{
+        order: 2;
     }
+
     .learn-more{
         display: none;
     }
+
     .submit-2{
         display: none;
     }
@@ -369,4 +382,14 @@ th{
         min-width: 300px;
         max-width: 100%;
     }
+
+    .about-p-desktop{
+        display: block;
+    }
+
+    .about-p{
+        display: none;
+    }
+
+    
 }
