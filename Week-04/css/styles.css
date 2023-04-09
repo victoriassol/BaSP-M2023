@@ -3,6 +3,7 @@
     overflow: hidden;
     height: 100vh;
 }
+
 header{
     position: fixed;
     width: 100%;
@@ -22,8 +23,10 @@ aside{
 }
 
 main{
-    max-width: 1100px;
-    padding: 3%;
+    margin: auto;
+    margin-top: 0;
+    max-width: 1200px;
+    padding: 1%;
     text-align: center;
     overflow: auto;
 }
@@ -211,10 +214,14 @@ input::placeholder{
     justify-content: center;
 }
 
-.welcome-column-1, .welcome-column-2{
-    flex: 100%;
+.welcome-column-1{
+    max-width: 480px;
+    align-self: center;
 }
 
+.welcome-column-2{
+    flex-shrink: 999;
+}
 #section-features{
     display: flex;
     flex-wrap: wrap;
@@ -301,11 +308,13 @@ th{
 }
 
 @media (min-width: 601px) {
-    .welcome-column-1{
+    .welcome-column-2, .welcome-column-1{
         flex: 50%;
     }
-    .welcome-column-2{
-        flex: 50%;
+
+    .welcome-column-2 img{
+        min-width: 300px;
+        max-width: 100%;
     }
     .features-column-1{
         flex: 50%
@@ -348,5 +357,14 @@ th{
 @media (min-width: 1025px){ 
     aside{
         display: block;
+    }
+
+    .welcome-column-2 img{
+        min-width: 300px;
+        max-width: 100%;
+    }
+
+    .welcome-column-2, .welcome-column-1{
+        flex: 50%;
     }
 }
