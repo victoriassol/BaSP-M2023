@@ -1,3 +1,18 @@
+:root{
+    --title: normal 700 1.875rem/2.1875rem Roboto;
+    --aside-button: normal 876 1.25rem/1.438rem Roboto;
+    --li-activities: normal 700 0.875rem/1rem Roboto;
+    --subheader: normal 400 1.25rem/1.44rem Roboto;
+    --component-title: normal 700 0.875rem/1rem Roboto;
+    --h3: normal 876 1.5rem/1.76rem Roboto;
+    --p-1: normal 400 0.75rem/1.125rem Roboto;
+    --p-2: normal 400 0.94rem/1.5rem Roboto;
+    --button: normal 500 0.75rem/0.875rem Roboto;
+    --label: normal 500 0.875rem/1rem Roboto;
+    --placeholder: normal 400 0.875rem/1rem Roboto;
+    --table: normal 600 0.75rem/0.75rem Roboto;
+    --footer: normal 600 0.875rem/0.875rem Roboto;
+}
 
 .main-container{
     display: flex;
@@ -16,12 +31,11 @@ header{
 
 aside{
     display: none;
-    height: 100vh;
+    height: 100%;
     width: 25%;
     min-width: 300px;
     margin-top: 73px;
     background-color: #AACE9B;
-    
 }
 
 main{
@@ -50,15 +64,11 @@ nav img{
     margin: auto;
     margin-top: 15px;
     text-align: left;
-    line-height: 37.69px;
     border: 1.5px solid #373867;
     border-radius: 5px;
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 876;
-    font-size: 20px;    
+    font: var(--aside-button);
+    line-height: 37.69px;    
     background-color: white;
-    color: #373867;
 }
 
 .button-nav a{
@@ -67,16 +77,13 @@ nav img{
 }
 
 .contact-info{
-    margin-top: 450px;
+    margin-top: 100%;
 }
 
 .contact-info h3{
     position: relative;
     margin-bottom: 40px;
-    font-family: Roboto;
-    font-size: 20px;
-    font-weight: 876;
-    line-height: 23px;
+    font: var(--aside-button);
     letter-spacing: 0em;
     text-align: center;
     text-decoration: underline;
@@ -85,10 +92,7 @@ nav img{
 
 .contact-info li{
     margin-left: 10px;
-    font-family: Roboto;
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 23px;
+    font: var(--subheader);
     letter-spacing: 0em;
     color: #373867;
     text-decoration: none;
@@ -110,41 +114,26 @@ nav img{
 }
 
 h1{
-    font-family: Roboto;
-    font-size: 2em;
-    font-weight: 700;
-    letter-spacing: 0em;
+    font: var(--title);
     color: #373867;
 }
 
 h2{
+    flex: 100%;
     color: #373867;
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 1.8em;
-    line-height: 35px;
+    font: var(--title);
     text-align: center;
     text-decoration: underline #49A37B 3px;
     text-underline-offset: 8px;
 }
 
 h3{
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 876;
-    font-size: 24px;
-    line-height: 28px;
-    text-transform: capitalize;
+    font: var(--h3);
     color: #373867;
 }
 
 p{
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 23px;
+    font: var(--p-1);
     color:#373867;
 }
 
@@ -152,11 +141,6 @@ form{
     display: flex;
     flex-wrap: wrap;
     padding: 4%;
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 16px;
     text-align: left;
     color: #373867;
 }
@@ -170,6 +154,7 @@ form{
 
 label{
     margin-bottom: 10px;
+    font: var(--label);
 }
 
 input, select, textarea{
@@ -178,11 +163,19 @@ input, select, textarea{
     margin-bottom: 25px;    
     border: 1px solid #373867;
     border-radius: 4px;
+    font: var(--placeholder);
 }
 
 textarea{    
     flex: 1;
     height: 150px;
+}
+
+#message::placeholder{
+    padding-left: 10px;
+    padding-top: 10px;
+    color: #373867;
+    opacity: 0.5;
 }
 
 input::placeholder{
@@ -195,9 +188,10 @@ input::placeholder{
     margin-bottom: 0px;
     width: 123px;
     height: 47px;
-    background: #AACE9B;
+    font: var(--button);
     border-radius: 5px;
     border: none;
+    background: #AACE9B;
     color: #373867;
 }
 
@@ -220,6 +214,10 @@ input::placeholder{
     justify-content: center;
 }
 
+#section-welcome p{
+    font: var(--subheader);
+}
+
 .welcome-column-1{
     max-width: 480px;
     align-self: center;
@@ -234,16 +232,21 @@ input::placeholder{
 }
 
 #section-features article{
-    max-width: 350px;
+    font: var(--p-1);
 }
 
-h2{
-    flex: 100%;
+#section-features h3{
+    margin-left: 5%;
+    font: var(--component-title);
 }
 
 #section-about{
     display: flex;
     flex-wrap: wrap;
+}
+
+#section-about p{
+    font: var(--p-2);
 }
 
 .about-row-1, .about-row-2{
@@ -253,14 +256,20 @@ h2{
     align-items: center;
 }
 
+.learn-more{
+    width: 88px;
+    height: 32px;
+    border: 1px solid #373867;
+    border-radius: 5px;
+    font: var(--button);
+    background: #FFFFFF;
+    color: #373867;
+}
+
 .list-activities{
     display: flex;
     justify-content: space-between;
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 876;
-    font-size: 24px;
-    line-height: 28px;
+    font: var(--li-activities);
     list-style: none;
     color: #373867;
 }
@@ -286,11 +295,7 @@ h2{
 }
 
 #welcome{
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 23px;
+    font: var(--subheader);
     color: #49A37B;
     text-decoration: none;
 }
@@ -303,10 +308,7 @@ table{
     margin-bottom: 10%;
     width: 100%;
     align-items: center;
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 12px;
+    font: var(--table);
     line-height: 100%;
     color: #373867;
     border-collapse: collapse;
@@ -328,10 +330,7 @@ footer{
     width: 100%;
     height: 72px;
     text-align: center;
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 14px;
+    font: var(--footer);
     background-color:#AACE9B;
 }
 
@@ -346,6 +345,22 @@ footer p{
 }
 
 @media (min-width: 601px) {
+    :root{
+        --title: normal 700 2.5rem/2.94rem Roboto;
+        --aside-button: normal 876 1.25rem/1.438rem Roboto;
+        --li-activities: normal 876 1.5rem/1.76rem Roboto;
+        --subheader: normal 400 1.25rem/1.44rem Roboto;
+        --component-title: normal 700 0.875rem/1rem Roboto;
+        --h3: normal 876 1.5rem/1.76rem Roboto;
+        --p-1: normal 400 0.75rem/1.125rem Roboto;
+        --p-2: normal 400 0.75rem/1.125rem Roboto;
+        --button: normal 500 1rem/1.172rem Roboto;
+        --label: normal 500 0.875rem/1rem Roboto;
+        --placeholder: normal 400 0.875rem/1rem Roboto;
+        --table: normal 700 0.875rem/1.026rem Roboto;
+        --footer: normal 600 0.875rem/0.875rem Roboto;
+    }
+
     main{
         width: 100%;
     }
