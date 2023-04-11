@@ -13,48 +13,25 @@
     --table: normal 600 0.75rem/0.75rem Roboto;
     --footer: normal 600 0.875rem/0.875rem Roboto;
 }
-
-header{
-    position: fixed;
-    top: 0;
-    width: 100%;
-    height: 73px;
-    background-color: #373867;
-    z-index: 1;
-    line-height: 73px;
-}
-
 .main-aside{
     display: flex;
 }
-
-main{
-    width: 100%;
-    max-width: 900px;
-    padding: 2%;
-    text-align: center;
-}
-
 section{
     margin-top: 5%;
 }
-
 section h2{
     margin-bottom: 4%;
 }
 main *{
     max-width: 100%;
 }
-
 a{
     color: #373867;
 }
-
 h1{
     font: var(--title);
     color: #373867;
 }
-
 h2{
     flex: 100%;
     color: #373867;
@@ -63,37 +40,14 @@ h2{
     text-decoration: underline #49A37B 3px;
     text-underline-offset: 8px;
 }
-
 h3{
     font: var(--h3);
     color: #373867;
 }
-
 p{
     font: var(--p-1);
     color:#373867;
 }
-
-form{
-    display: flex;
-    flex-wrap: wrap;
-    padding: 4%;
-    text-align: left;
-    color: #373867;
-}
-.intouch-column-1 *, .intouch-column-2 * {
-    width: 100%;
-}
-
-.about-p{
-    display: none;
-}
-
-label{
-    margin-bottom: 10px;
-    font: var(--label);
-}
-
 input, select, textarea{
     box-sizing:border-box;
     height: 37px;
@@ -102,191 +56,35 @@ input, select, textarea{
     border-radius: 4px;
     font: var(--placeholder);
 }
-
-textarea{    
-    flex: 1;
-    height: 150px;
-}
-
 #message::placeholder{
     padding-left: 10px;
     padding-top: 10px;
     color: #373867;
     opacity: 0.5;
 }
-
 input::placeholder{
     padding-left: 10px;
     color: #373867;
     opacity: 0.5;
 }
-
 .submit{
-    margin-bottom: 0px;
     width: 123px;
     height: 47px;
+    margin-bottom: 0px;
     font: var(--button);
     border-radius: 5px;
     border: none;
     background: #AACE9B;
     color: #373867;
 }
-
 .submit-1{
     display: none;
 }
-
 #logo{
     width: 194px;
     height: 41px;
     margin-left: 29px;    
     vertical-align: middle;
-}
-
-#section-welcome{
-    margin-top: 100px;
-    display: flex;
-    flex-wrap: wrap;
-    text-align: center;
-    justify-content: center;
-}
-
-#section-welcome p{
-    margin-top: 2%;
-    margin-bottom: 2%;
-    font: var(--subheader);
-}
-
-.welcome-column-1{
-    max-width: 480px;
-    align-self: center;
-}
-
-
-#section-features{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    text-align: left;
-}
-
-#section-features article{
-    font: var(--p-1);
-}
-
-#section-features h3{
-    margin-top: 2%;
-    margin-bottom: 2%;
-    margin-left: 5%;
-    font: var(--component-title);
-}
-
-#section-about{
-    display: flex;
-    flex-wrap: wrap;
-}
-
-#section-about p{
-    margin-top: 3%;
-    margin-bottom: 3%;
-    font: var(--p-2);
-}
-
-.about-row-1, .about-row-2{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
-}
-
-.learn-more{
-    margin-bottom: 2%;
-    width: 88px;
-    height: 32px;
-    border: 1px solid #373867;
-    border-radius: 5px;
-    font: var(--button);
-    background: #FFFFFF;
-    color: #373867;
-}
-
-.list-activities{
-    display: flex;
-    justify-content: center;
-    margin-bottom: 2%;
-    font: var(--li-activities);
-    list-style: none;
-    color: #373867;
-}
-
-.list-activities li{
-    margin: 15%;
-}
-
-.activities-column{
-    display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-}
-
-.activities-center{
-    align-self: center;
-}
-
-#section-activities{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-}
-
-#welcome{
-    font: var(--subheader);
-    color: #49A37B;
-    text-decoration: none;
-}
-
-#section-features img{
-    width: 27.7px;
-}
-
-table{
-    margin-bottom: 10%;
-    width: 100%;
-    align-items: center;
-    font: var(--table);
-    line-height: 100%;
-    color: #373867;
-    border-collapse: collapse;
-}
-
-td, th{
-    padding: 16px;
-}
-
-tr:nth-child(odd) {
-    background-color: #f2f2f2;
-}
-
-th{
-    background-color: #f2f2f2;
-}
-
-footer{
-    width: 100%;
-    height: 72px;
-    text-align: center;
-    font: var(--footer);
-    background-color:#AACE9B;
-}
-
-footer ul li{
-    display: inline-block;
-    padding-left: 10px;
-    margin-top: 10px;
-}
-
-footer p{
-    color: white;
 }
 
 @media (min-width: 601px) {
@@ -305,58 +103,45 @@ footer p{
         --table: normal 700 0.875rem/1.026rem Roboto;
         --footer: normal 600 0.875rem/0.875rem Roboto;
     }
-
     .welcome-column-2, .welcome-column-1{
         flex: 50%;
     }
-
     .welcome-column-2 img{
         margin-left: 3%;
         max-width: 90%;
     }
-
     .features-column-1, .features-column-2{
         flex: 50%;
     }
-
     #section-features article{
         margin: 5%;
     }
-
     .about-row-1, .about-row-2{
         flex-wrap: nowrap;
         flex: 100%
     }
-
     #section-about p, #section-about img{
         width: 40%;
     }
-
     .about-row-1 p{
-        text-align: right;
         margin-right: 0;
-    }
-    
+        text-align: right;
+    }    
     .about-row-2 p{
         text-align: left;
-    }
-    
+    }    
     .about-row-2 img{
         order: 2;
     }
-
     .learn-more{
         display: none;
     }
-
     .about-p{
         display: block;
     }
-
     .about-p-mobile{
         display: none;
     }
-
     .intouch-column-1, .intouch-column-2{
         display: flex;
         flex-wrap: wrap;
@@ -381,20 +166,16 @@ footer p{
         padding: 2%;
         padding-bottom: 0;
     }
-
     textarea{        
-    margin-bottom: 0;
+        margin-bottom: 0;
     }
-
     #section-activities img{
         width: 50%;
     }
-
     .list-activities{
         display: block;
         list-style:disc;
     }
-
     .list-activities li{
         margin: 2%;
     }
@@ -404,25 +185,20 @@ footer p{
     aside{
         display: flex;
     }
-
     .fake-aside{
         display: block;
     }
-
     main{
         width: 80%;
         margin: 0 auto;
     }
-
     .welcome-column-2 img{
         min-width: 300px;
         max-width: 100%;
     }
-
     .about-p{
         display: block;
     }
-
     .about-p-mobile{
         display: none;
     }
