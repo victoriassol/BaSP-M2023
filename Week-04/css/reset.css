@@ -51,3 +51,10 @@ table {
 a{
 	text-decoration: none;
 }
+
+
+.main-container{
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
