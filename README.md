@@ -7,4 +7,5 @@
 Week 01. Designing along with all the team a Figma wireframe for the entire site
 Week 02. Making the HTML code for the landing page, desktop version
 Week 03. Creating a pixel-perfect stylesheet for the landing page, desktop version
-Week 04. https://victoriassol.github.io/BaSP-M2023/
+Week 04. Creating the responsive version for the landing page
+https://victoriassol.github.io/BaSP-M2023/
