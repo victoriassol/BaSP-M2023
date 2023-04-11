@@ -14,14 +14,9 @@
     --footer: normal 600 0.875rem/0.875rem Roboto;
 }
 
-.main-container{
-    display: flex;
-    height: 100vh;
-    overflow: hidden;
-}
-
 header{
     position: fixed;
+    top: 0;
     width: 100%;
     height: 73px;
     background-color: #373867;
@@ -29,24 +24,33 @@ header{
     line-height: 73px;
 }
 
+.main-aside{
+    display: flex;
+}
+
 aside{
+    position: fixed;
     display: none;
+    left: 0;
+    top: 73px;
     height: 100%;
-    width: 25%;
+    width: 20%;
     min-width: 300px;
-    margin-top: 73px;
     background-color: #AACE9B;
 }
 
+.fake-aside{
+    display: none;
+    width: 20%;
+    min-width: 300px;
+    height: 100%;
+}
+
 main{
-    width: 85%;
-    height: 100vh;
-    margin-top: 0;
-    margin: auto;
+    width: 100%;
     max-width: 900px;
     padding: 2%;
     text-align: center;
-    overflow-y: auto;
 }
 
 section{
@@ -257,7 +261,8 @@ input::placeholder{
 }
 
 #section-about p{
-    margin: 3%;
+    margin-top: 3%;
+    margin-bottom: 3%;
     font: var(--p-2);
 }
 
@@ -364,10 +369,10 @@ footer p{
         --aside-button: normal 876 1.25rem/1.438rem Roboto;
         --li-activities: normal 876 1.5rem/1.76rem Roboto;
         --subheader: normal 400 1.25rem/1.44rem Roboto;
-        --component-title: normal 700 0.875rem/1rem Roboto;
+        --component-title: normal 876 1.25rem/1.465rem Roboto;
         --h3: normal 876 1.5rem/1.76rem Roboto;
-        --p-1: normal 400 0.75rem/1.125rem Roboto;
-        --p-2: normal 400 0.75rem/1.125rem Roboto;
+        --p-1: normal 400 1.25rem/1.44rem Roboto;
+        --p-2: normal 400 1.25rem/1.44rem Roboto;
         --button: normal 500 1rem/1.172rem Roboto;
         --label: normal 500 0.875rem/1rem Roboto;
         --placeholder: normal 400 0.875rem/1rem Roboto;
@@ -375,16 +380,13 @@ footer p{
         --footer: normal 600 0.875rem/0.875rem Roboto;
     }
 
-    main{
-        width: 100%;
-    }
-
     .welcome-column-2, .welcome-column-1{
         flex: 50%;
     }
 
     .welcome-column-2 img{
-        max-width: 100%;
+        margin-left: 3%;
+        max-width: 90%;
     }
 
     .features-column-1, .features-column-2{
@@ -401,11 +403,12 @@ footer p{
     }
 
     #section-about p, #section-about img{
-        width: 50%;
+        width: 40%;
     }
 
     .about-row-1 p{
         text-align: right;
+        margin-right: 0;
     }
     
     .about-row-2 p{
@@ -476,6 +479,15 @@ footer p{
         display: block;
     }
 
+    .fake-aside{
+        display: block;
+    }
+
+    main{
+        width: 80%;
+        margin: 0 auto;
+    }
+
     .welcome-column-2 img{
         min-width: 300px;
         max-width: 100%;
@@ -488,6 +500,4 @@ footer p{
     .about-p-mobile{
         display: none;
     }
-
-    
 }
