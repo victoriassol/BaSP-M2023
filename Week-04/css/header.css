@@ -1,9 +1,15 @@
 header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     position: fixed;
     width: 100%;
     height: 73px;
     top: 0;
     background-color: #373867;
     z-index: 1;
-    line-height: 73px;
+}
+
+header *{
+    margin: 3%;
 }

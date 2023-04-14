@@ -22,6 +22,9 @@ section{
 section h2{
     margin-bottom: 4%;
 }
+main{
+    width: 100%;
+}
 main *{
     max-width: 100%;
 }
@@ -79,12 +82,6 @@ input::placeholder{
 }
 .submit-1{
     display: none;
-}
-#logo{
-    width: 194px;
-    height: 41px;
-    margin-left: 29px;    
-    vertical-align: middle;
 }
 
 @media (min-width: 601px) {
@@ -182,6 +179,9 @@ input::placeholder{
 }
 
 @media (min-width: 1025px){ 
+    #hamburger{
+        display: none;
+    }
     aside{
         display: flex;
     }

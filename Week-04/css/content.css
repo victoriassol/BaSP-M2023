@@ -79,14 +79,12 @@ textarea{
     margin-bottom: 3%;
     font: var(--p-2);
 }
-
 .about-row-1, .about-row-2{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
 }
-
 .learn-more{
     margin-bottom: 2%;
     width: 88px;
@@ -97,7 +95,6 @@ textarea{
     background: #FFFFFF;
     color: #373867;
 }
-
 .list-activities{
     display: flex;
     justify-content: center;
@@ -106,7 +103,6 @@ textarea{
     list-style: none;
     color: #373867;
 }
-
 .list-activities li{
     margin: 15%;
 }
