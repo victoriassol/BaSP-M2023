@@ -17,7 +17,7 @@ else {
 “Anciano” si es mayor a 75 años. */
 var age = Math.round(Math.random()*100);
 if (age < 2){
-    console.log('4b. ' + age + 'Bebé')
+    console.log('4b. ' + age + ' bebé')
 }
 else if (age >= 2 && age <= 12){
     console.log('4b. ' + age + ' niño')
