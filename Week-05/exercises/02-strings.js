@@ -12,7 +12,6 @@ var stringLastSub = tenString.substring(tenString.length - 3);
 console.log('2c. ' + stringLastSub);
 
 // 2d. Crear una variable de tipo string con al menos 10 caracteres y generar un nuevo string con la primera letra en mayúscula y las demás en minúscula. Guardar el resultado en una nueva variable (utilizar substring, toUpperCase, toLowerCase y el operador +).
-
 var firstUpper = tenString.substring(0,1).toUpperCase();
 var lastLower = tenString.substring(tenString.length - (tenString.length - 1)).toLowerCase();
 var stringFirstUpper = firstUpper + lastLower;

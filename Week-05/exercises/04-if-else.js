@@ -1,10 +1,11 @@
-// 4a. Crear un número aleatorio entre 0 y 1 utilizando la función Math.random(), si el valor es mayor o igual que 0,5 mostrar una alerta con el mensaje “Greater than or equal to 0,5” y sino un alerta con el mensaje “Lower than 0,5”.
+/* 4a. Crear un número aleatorio entre 0 y 1 utilizando la función Math.random(), si el valor es mayor o igual que 0,5 
+mostrar una alerta con el mensaje “Greater than or equal to 0,5” y sino un alerta con el mensaje “Lower than 0,5”. */
 var numRandom = Math.random();
 if (numRandom >= 0.5){
-    console.log('4a. ' + numRandom + ' is Greater than or equal to 0.5')
+    console.log('4a. ' + numRandom + ' is Greater than or equal to 0.5');
 }
 else {
-    console.log('4a. ' + numRandom + ' is Lower than 0.5')
+    console.log('4a. ' + numRandom + ' is Lower than 0.5');
 };
 
 /* 4b. Crear una variable “Age” que contenga un número entero entre 0 y 100 y muestre los siguientes mensajes de alerta:
@@ -17,20 +18,20 @@ else {
 “Anciano” si es mayor a 75 años. */
 var age = Math.round(Math.random()*100);
 if (age < 2){
-    console.log('4b. ' + age + ' bebé')
+    alert('4b. ' + age + ' bebé');
 }
 else if (age >= 2 && age <= 12){
-    console.log('4b. ' + age + ' niño')
+    alert('4b. ' + age + ' niño');
 }
 else if (age >= 13 && age <= 19){
-    console.log('4b. ' + age + ' adolescente')
+    alert('4b. ' + age + ' adolescente');
 }
 else if (age >= 31 && age <= 60){
-    console.log('4b. ' + age + ' adulto')
+    alert('4b. ' + age + ' adulto');
 }
 else if (age >= 61 && age <= 75){
-    console.log('4b. ' + age + ' adulto mayor')
+    alert('4b. ' + age + ' adulto mayor');
 }
 else if (age > 75){
-    console.log('4b. ' + age + ' anciano')
-}
+    alert('4b. ' + age + ' anciano');
+};

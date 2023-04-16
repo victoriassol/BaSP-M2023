@@ -20,9 +20,9 @@ console.log('3d. ' + months);
 // 3e. Invertir el orden del array (utilizar reverse).
 console.log('3e. ' + months.reverse());
 
-//3f. Unir todos los elementos del array en un único string donde cada mes este separado por un guión - (utilizar join).
+// 3f. Unir todos los elementos del array en un único string donde cada mes este separado por un guión - (utilizar join).
 console.log('3f. ' + months.join('-'));
 
-//3g. Crear una copia del array de meses que contenga desde Mayo hasta Noviembre (utilizar slice).
+// 3g. Crear una copia del array de meses que contenga desde Mayo hasta Noviembre (utilizar slice).
 months = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
 console.log(months.slice(months.indexOf('Mayo'), months.indexOf('Noviembre') + 1));
