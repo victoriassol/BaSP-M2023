@@ -10,3 +10,4 @@ Week 03. Creating a pixel-perfect stylesheet for the landing page, desktop versi
 Week 04. Creating the responsive version for the landing page
 https://victoriassol.github.io/BaSP-M2023/
 Week 05. Solving 6 Javascript exercises
+https://victoriassol.github.io/BaSP-M2023/Week-05/index.html
