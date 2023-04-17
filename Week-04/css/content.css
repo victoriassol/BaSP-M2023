@@ -4,7 +4,6 @@ main{
     padding: 2%;
     text-align: center;
 }
-
 form{
     display: flex;
     flex-wrap: wrap;
@@ -12,25 +11,20 @@ form{
     text-align: left;
     color: #373867;
 }
-
 .intouch-column-1 *, .intouch-column-2 * {
     width: 100%;
 }
-
 .about-p{
     display: none;
 }
-
 label{
     margin-bottom: 10px;
     font: var(--label);
 }
-
-textarea{    
+textarea{
     flex: 1;
     height: 150px;
 }
-
 #section-welcome{
     margin-top: 100px;
     display: flex;
@@ -38,18 +32,15 @@ textarea{
     text-align: center;
     justify-content: center;
 }
-
 #section-welcome p{
     margin-top: 2%;
     margin-bottom: 2%;
     font: var(--subheader);
 }
-
 .welcome-column-1{
     max-width: 480px;
     align-self: center;
 }
-
 
 #section-features{
     display: flex;
@@ -57,23 +48,19 @@ textarea{
     justify-content: space-around;
     text-align: left;
 }
-
 #section-features article{
     font: var(--p-1);
 }
-
 #section-features h3{
     margin-top: 2%;
     margin-bottom: 2%;
     margin-left: 5%;
     font: var(--component-title);
 }
-
 #section-about{
     display: flex;
     flex-wrap: wrap;
 }
-
 #section-about p{
     margin-top: 3%;
     margin-bottom: 3%;
@@ -84,6 +71,38 @@ textarea{
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
+}
+input, select, textarea{
+    box-sizing:border-box;
+    height: 37px;
+    margin-bottom: 25px;
+    border: 1px solid #373867;
+    border-radius: 4px;
+    font: var(--placeholder);
+}
+#message::placeholder{
+    padding-left: 10px;
+    padding-top: 10px;
+    color: #373867;
+    opacity: 0.5;
+}
+input::placeholder{
+    padding-left: 10px;
+    color: #373867;
+    opacity: 0.5;
+}
+.submit{
+    width: 123px;
+    height: 47px;
+    margin-bottom: 0px;
+    font: var(--button);
+    border-radius: 5px;
+    border: none;
+    background: #AACE9B;
+    color: #373867;
+}
+.submit-1{
+    display: none;
 }
 .learn-more{
     margin-bottom: 2%;
@@ -106,33 +125,27 @@ textarea{
 .list-activities li{
     margin: 15%;
 }
-
 .activities-column{
     display: flex;
 	flex-direction: column;
 	justify-content: space-between;
 }
-
 .activities-center{
     align-self: center;
 }
-
 #section-activities{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
 }
-
 #welcome{
     font: var(--subheader);
     color: #49A37B;
     text-decoration: none;
 }
-
 #section-features img{
     width: 27.7px;
 }
-
 table{
     width: 100%;
     margin-bottom: 10%;
@@ -142,15 +155,12 @@ table{
     color: #373867;
     border-collapse: collapse;
 }
-
 td, th{
     padding: 16px;
 }
-
 tr:nth-child(odd) {
     background-color: #f2f2f2;
 }
-
 th{
     background-color: #f2f2f2;
 }

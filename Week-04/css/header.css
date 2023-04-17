@@ -9,7 +9,6 @@ header{
     background-color: #373867;
     z-index: 1;
 }
-
-header *{
+header img{
     margin: 3%;
 }
