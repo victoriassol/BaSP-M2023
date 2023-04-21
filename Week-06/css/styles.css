@@ -1,0 +1,205 @@
+:root{
+    --title: normal 700 1.875rem/2.1875rem Roboto;
+    --aside-button: normal 876 1.25rem/1.438rem Roboto;
+    --li-activities: normal 700 0.875rem/1rem Roboto;
+    --subheader: normal 400 1.25rem/1.44rem Roboto;
+    --component-title: normal 700 0.875rem/1rem Roboto;
+    --h3: normal 876 1.5rem/1.76rem Roboto;
+    --p-1: normal 400 0.75rem/1.125rem Roboto;
+    --p-2: normal 400 0.94rem/1.5rem Roboto;
+    --button: normal 500 0.75rem/0.875rem Roboto;
+    --label: normal 500 0.875rem/1rem Roboto;
+    --placeholder: normal 400 0.875rem/1rem Roboto;
+    --table: normal 600 0.75rem/0.75rem Roboto;
+    --footer: normal 600 0.875rem/0.875rem Roboto;
+}
+.main-aside{
+    display: flex;
+}
+section{
+    margin-top: 5%;
+}
+section h2{
+    margin-bottom: 4%;
+}
+main{
+    width: 100%;
+}
+main *{
+    max-width: 100%;
+}
+a{
+    color: #373867;
+}
+h1{
+    font: var(--title);
+    color: #373867;
+}
+h2{
+    flex: 100%;
+    color: #373867;
+    font: var(--title);
+    text-align: center;
+    text-decoration: underline #49A37B 3px;
+    text-underline-offset: 8px;
+}
+h3{
+    font: var(--h3);
+    color: #373867;
+}
+p{
+    font: var(--p-1);
+    color:#373867;
+}
+input, select, textarea{
+    box-sizing:border-box;
+    height: 37px;
+    margin-bottom: 25px;    
+    border: 1px solid #373867;
+    border-radius: 4px;
+    font: var(--placeholder);
+}
+#message::placeholder{
+    padding-left: 10px;
+    padding-top: 10px;
+    color: #373867;
+    opacity: 0.5;
+}
+input::placeholder{
+    padding-left: 10px;
+    color: #373867;
+    opacity: 0.5;
+}
+.submit{
+    width: 123px;
+    height: 47px;
+    margin-bottom: 0px;
+    font: var(--button);
+    border-radius: 5px;
+    border: none;
+    background: #AACE9B;
+    color: #373867;
+}
+.submit-1{
+    display: none;
+}
+
+@media (min-width: 601px) {
+    :root{
+        --title: normal 700 2.5rem/2.94rem Roboto;
+        --aside-button: normal 876 1.25rem/1.438rem Roboto;
+        --li-activities: normal 876 1.5rem/1.76rem Roboto;
+        --subheader: normal 400 1.25rem/1.44rem Roboto;
+        --component-title: normal 876 1.25rem/1.465rem Roboto;
+        --h3: normal 876 1.5rem/1.76rem Roboto;
+        --p-1: normal 400 1.25rem/1.44rem Roboto;
+        --p-2: normal 400 1.25rem/1.44rem Roboto;
+        --button: normal 500 1rem/1.172rem Roboto;
+        --label: normal 500 0.875rem/1rem Roboto;
+        --placeholder: normal 400 0.875rem/1rem Roboto;
+        --table: normal 700 0.875rem/1.026rem Roboto;
+        --footer: normal 600 0.875rem/0.875rem Roboto;
+    }
+    .welcome-column-2, .welcome-column-1{
+        flex: 50%;
+    }
+    .welcome-column-2 img{
+        margin-left: 3%;
+        max-width: 90%;
+    }
+    .features-column-1, .features-column-2{
+        flex: 50%;
+    }
+    #section-features article{
+        margin: 5%;
+    }
+    .about-row-1, .about-row-2{
+        flex-wrap: nowrap;
+        flex: 100%
+    }
+    #section-about p, #section-about img{
+        width: 40%;
+    }
+    .about-row-1 p{
+        margin-right: 0;
+        text-align: right;
+    }    
+    .about-row-2 p{
+        text-align: left;
+    }    
+    .about-row-2 img{
+        order: 2;
+    }
+    .learn-more{
+        display: none;
+    }
+    .about-p{
+        display: block;
+    }
+    .about-p-mobile{
+        display: none;
+    }
+    .intouch-column-1, .intouch-column-2{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+    .submit-2{
+        display: none;
+    }
+    .submit-1{
+        display: block;
+    }
+    form{
+        padding: 0%;
+    }
+    .intouch-column-1{
+        flex: 20%;
+        padding: 2%;
+        padding-bottom: 0;
+    }
+    .intouch-column-2{
+        flex: 30%;
+        padding: 2%;
+        padding-bottom: 0;
+    }
+    textarea{        
+        margin-bottom: 0;
+    }
+    #section-activities img{
+        width: 50%;
+    }
+    .list-activities{
+        display: block;
+        list-style:disc;
+    }
+    .list-activities li{
+        margin: 2%;
+    }
+}
+
+@media (min-width: 1025px){ 
+    #hamburger{
+        display: none;
+    }
+    aside{
+        display: flex;
+    }
+    .fake-aside{
+        display: block;
+    }
+    main{
+        width: 80%;
+        margin: 0 auto;
+    }
+    .welcome-column-2 img{
+        min-width: 300px;
+        max-width: 100%;
+    }
+    .about-p{
+        display: block;
+    }
+    .about-p-mobile{
+        display: none;
+    }
+}

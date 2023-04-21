@@ -10,6 +10,7 @@ var string2 = "mundo";
 var concat = string1 + string2;
 console.log("1b. " + concat);
 
-// 1c. Crear dos variables de tipo String y sumar el largo de cada variable (cantidad de letras del string) guardando el resultado de la suma en una 3er variable (utilizar length).
+/* 1c. Crear dos variables de tipo String y sumar el largo de cada variable (cantidad de letras del string) guardando el 
+resultado de la suma en una 3er variable (utilizar length).*/
 var totalLenght = string1.length + string2.length;
 console.log("1b. " + totalLenght);
