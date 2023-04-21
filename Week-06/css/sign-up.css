@@ -1,0 +1,22 @@
+.signup-column-1, .signup-column-2{
+    display: flex;
+    flex-direction: column;
+}
+
+select{
+    display: block;
+    width: 100%;
+}
+.login{
+    margin-top: 5%;
+}
+@media (min-width: 1025px){
+    .column-container{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .signup-column-1, .signup-column-2{
+        width: 45%;
+    }
+}
