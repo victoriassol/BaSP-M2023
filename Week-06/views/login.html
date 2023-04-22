@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="../css/aside.css">
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/log-in.css">
+    <script src="../js/login.js" defer></script>
     <title>Document</title>
 </head>
 <body>
@@ -66,8 +67,10 @@
                 <h2>Log In</h2>
                 <label for="email">Email</label>
                 <input type="text" name="email" id="email" placeholder="Email">
+                <div class="errorDiv"></div>
                 <label for="password">Password</label>
                 <input type="password" name="password" id="password" placeholder="Password">
+                <div class="errorDiv"></div>
                 <div class="remember-me">
                     <input type="checkbox" id="remember-me" name="remember-me">
                     <label for="remember-me">Remember me</label>
