@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/log-in.css">
     <link rel="stylesheet" href="../css/sign-up.css">
+    <script src="../js/sign-up.js" defer></script>
     <title>Sign Up</title>
 </head>
 <body>
@@ -67,28 +68,41 @@
                 <h2>Sign Up</h2>
                 <div class="column-container">                
                     <div class="signup-column-1">
-                        <label for="name">Name</label>
-                        <input type="text" name="name" id="email" placeholder="Enter your name">
+                        <label for="first-name">Name</label>
+                        <input type="text" name="first-name" id="first-name" placeholder="Enter your name">
+                        <div class="errorDiv"></div>
                         <label for="last-name">Last name</label>
                         <input type="text" name="last-name" id="last-name" placeholder="Enter your last name">
+                        <div class="errorDiv"></div>
                         <label for="dni">DNI</label>
                         <input type="text" name="dni" id="dni" placeholder="Enter your DNI number">
+                        <div class="errorDiv"></div>
                         <label for="dob">Date of birth</label>
                         <input type="date" name="dob" id="dob" placeholder="Enter your date of birth">
+                        <div class="errorDiv"></div>
                         <label for="number">Phone number</label>
                         <input type="text" name="number" id="number" placeholder="Enter your phone number">
+                        <div class="errorDiv"></div>
                     </div>
                     <div class="signup-column-2">
                         <label for="address">Adress</label>
                         <input type="text" name="address" id="address" placeholder="Enter your address">
+                        <div class="errorDiv"></div>
                         <label for="city">City</label>
                         <input type="text" name="city" id="city" placeholder="Enter your city">
+                        <div class="errorDiv"></div>
                         <label for="zip">Zip code</label>
                         <input type="text" name="zip" id="zip" placeholder="Enter your zip code">
+                        <div class="errorDiv"></div>
+                        <label for="email">Email</label>
+                        <input type="text" name="email" id="email" placeholder="Enter your email address">
+                        <div class="errorDiv"></div>
                         <label for="password">Password</label>
                         <input type="password" name="password" id="password" placeholder="Enter your password">
+                        <div class="errorDiv"></div>
                         <label for="rep-password">Repeat password</label>
                         <input type="password" name="rep-password" id="rep-password" placeholder="Repeate your password">
+                        <div class="errorDiv"></div>
                     </div>
                 </div>
                 <div class="membership">
