@@ -10,22 +10,44 @@ var email = document.getElementById('email');
 var password = document.getElementById('password');
 var repPassword = document.getElementById('rep-password');
 var membership = document.getElementById('membership');
-
+var inputs = [firstName, lastName, dni, dob, number, address, city, zip, email, password, repPassword]
+var validations = [validateName, validateLName, validateDNI, validateDOB, validateNumber, validateAddress, validateCity, validateZip, validateEmail, validatePassword, validateRepPassword]
 var errorMsg = [];
 var errorDiv = document.getElementsByClassName('errorDiv')
 
-function validateName(name){
+function validateName(){
     var errors = [];
     var reg = /^(?!\s+$)[a-zA-Z\u00C0-\u017F\s]+$/;
-    if (name.value =='' || name.value ==null){
+    if (firstName.value =='' || firstName.value ==null){
         errorMsg.push('Cannot be empty')
         return false
     }
-    if (!reg.test(name.value)){
-        errors.push('Must contain letters only')
+    if (!reg.test(firstName.value)){
+        errors.push('Name must contain letters only')
     }
-    if (name.value.length<3){
-        errors.push('Must be longer than 3 letters')
+    if (firstName.value.length<3){
+        errors.push('Name must be longer than 3 letters')
+    }    
+    if (errors.length>0){
+        errorMsg.push(errors)
+        return false
+    }
+    else{
+        return true
+    };
+};
+function validateLName(){
+    var errors = [];
+    var reg = /^(?!\s+$)[a-zA-Z\u00C0-\u017F\s]+$/;
+    if (lastName.value =='' || lastName.value ==null){
+        errorMsg.push('Cannot be empty')
+        return false
+    }
+    if (!reg.test(lastName.value)){
+        errors.push('Last name must contain letters only')
+    }
+    if (lastName.value.length<3){
+        errors.push('Last name must be longer than 3 letters')
     }    
     if (errors.length>0){
         errorMsg.push(errors)
@@ -48,6 +70,15 @@ function validateDNI(){
     else{
         return true
     };
+}
+function validateDOB(){
+    if (dob.value =='' || dob.value ==null){
+        errorMsg.push('Date of birth cannot be empty')
+        return false
+    }
+    else{
+        return true
+    }
 }
 function validateNumber(){
     var reg = /^\d{10}$/;
@@ -154,7 +185,7 @@ function validatePassword(){
         errors.push('At least 8 characters')
     }
     if (errors.length>0){
-        errorMsg.push('Password must contain: ', errors)
+        errorMsg.push('Password must contain: ', ...errors)
         return false
     }
     else{
@@ -179,59 +210,25 @@ function handleError(e, errDiv){
 };
 
 //Blur events//
-firstName.addEventListener("blur", (e)=>{
-    if (!validateName(firstName)){
-        handleError(e, 0)
-    }
-});
-lastName.addEventListener("blur", (e)=>{
-    if (!validateName(lastName)){
-        handleError(e, 1)
-    }
-});
-dni.addEventListener("blur", (e)=>{
-    if (!validateDNI()){
-        handleError(e, 2)
-    }
-});
-number.addEventListener("blur", (e)=>{
-    if (!validateNumber()){
-        handleError(e, 4)
-    }
-});
-address.addEventListener("blur", (e)=>{
-    if (!validateAddress()){
-        handleError(e, 5)
-    }
-});
-city.addEventListener("blur", (e)=>{
-    if (!validateCity()){
-        handleError(e, 6)
-    }
-});
-zip.addEventListener("blur", (e)=>{
-    if (!validateZip()){
-        handleError(e, 7)
-    }
-});
-email.addEventListener("blur", (e)=>{
-    if (!validateEmail()){
-        handleError(e, 8)
-    }
-});
-password.addEventListener("blur", (e)=>{
-    if (!validatePassword()){
-        handleError(e, 9)
-    }
-});
-repPassword.addEventListener("blur", (e)=>{
-    if (!validateRepPassword()){
-        handleError(e, 10)
-    }
-});
+for (let j = 0; j<inputs.length; j++){
+    console.log(j)
+    inputs[j].addEventListener("blur", (e)=>{
+        if (!validations[j]()){
+            handleError(e, j)
+        }
+    })
+}
 
 //Focus events//
-firstName.addEventListener('focus', (e)=>{
+for (let j = 0; j<inputs.length; j++){
+    inputs[j].addEventListener('focus', (e)=>{
+        errorMsg = [];
+        e.target.style = 'border: gray 1px solid';
+        errorDiv[j].textContent = '';
+    })
+}
+
+/*firstName.addEventListener('focus', (e)=>{
     errorMsg = [];
     e.target.style = 'border: gray 1px solid';
     errorDiv[0].textContent = '';
@@ -245,6 +242,11 @@ dni.addEventListener('focus', (e)=>{
     errorMsg = [];
     e.target.style = 'border: gray 1px solid';
     errorDiv[2].textContent = '';
+});
+dob.addEventListener('focus', (e)=>{
+    errorMsg = [];
+    e.target.style = 'border: gray 1px solid';
+    errorDiv[3].textContent = '';
 });
 number.addEventListener('focus', (e)=>{
     errorMsg = [];
@@ -280,4 +282,4 @@ repPassword.addEventListener('focus', (e)=>{
     errorMsg = [];
     e.target.style = 'border: gray 1px solid';
     errorDiv[10].textContent = '';
-})
+})*/
