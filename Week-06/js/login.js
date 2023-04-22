@@ -45,7 +45,7 @@ function validatePassword(){
         errors.push('At least 8 characters')
     }
     if (errors.length>0){
-        errorMsg.push('Password must contain: ', errors)
+        errorMsg.push('Password must contain: ', ...errors)
         return false
     }
     else{
@@ -56,7 +56,7 @@ function validatePassword(){
 function handleError(e, errDiv){
     e.target.style = 'border: red 1px solid';
     for(var i = 0; i < errorMsg.length; i++){
-        errorDiv[errDiv].innerHTML += errorMsg[i]
+        errorDiv[errDiv].innerHTML += `<li style="list-style: none">${errorMsg[i]}</li>`
     }
 };
 

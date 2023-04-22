@@ -10,6 +10,18 @@ select{
 .login{
     margin-top: 5%;
 }
+.errorDiv{
+    position: relative;
+    top: -20px;
+    color: red;
+    font: var(--label)
+}
+.show{
+    display: block;
+}
+.hide{
+    display: none;
+}
 @media (min-width: 1025px){
     .column-container{
         display: flex;

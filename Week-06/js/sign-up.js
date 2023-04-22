@@ -38,11 +38,11 @@ function validateName(name){
 function validateDNI(){
     var reg = /^\d{8,}$/;
     if (dni.value =='' || dni.value ==null){
-        errorMsg.push('Cannot be empty')
+        errorMsg.push('DNI cannot be empty')
         return false
     }
     if (!reg.test(dni.value)){
-        errorMsg.push('Must contain numbers only and be longer than 7 characters')
+        errorMsg.push('DNI must contain numbers only and be longer than 7 characters')
         return false
     }
     else{
@@ -56,7 +56,7 @@ function validateNumber(){
         return false
     }
     if (!reg.test(number.value)){
-        errorMsg.push('Must contain 10 digits only')
+        errorMsg.push('Phone number must contain 10 digits only')
         return false
     }
     else{
@@ -135,7 +135,7 @@ function validatePassword(){
     var reg5 = /^.{8,}$/;
     var errors = [];
     if (password.value == '' || password.value == null){
-        errorMsg.push('password cannot be empty')
+        errorMsg.push('Password cannot be empty')
         return false
     }
     if (!reg.test(password.value)){
@@ -174,7 +174,7 @@ function validateRepPassword(){
 function handleError(e, errDiv){
     e.target.style = 'border: red 1px solid';
     for(var i = 0; i < errorMsg.length; i++){
-        errorDiv[errDiv].innerHTML += errorMsg[i]
+        errorDiv[errDiv].innerHTML += `<li style="list-style: none">${errorMsg[i]}</li>`
     }
 };
 
