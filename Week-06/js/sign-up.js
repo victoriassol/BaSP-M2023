@@ -187,6 +187,7 @@ function validatePassword(){
     var reg4 = /^(?=.*[!@#$%^&*()_+=[{\]};:<>|./?,-]).+$/;
     var reg5 = /^.{8,}$/;
     var errors = [];
+
     if (password.value == '' || password.value == null){
         allErrors.push('Password cannot be empty')
         errorMsg.push('Password cannot be empty')
@@ -241,7 +242,7 @@ function handleError(e, errDiv){
 
 //Blur events//
 for (let j = 0; j<inputs.length; j++){
-    inputs[j].addEventListener("blur", (e)=>{
+    inputs[j].addEventListener('blur', (e)=>{
         if (!validations[j]()){
             handleError(e, j)
         }

@@ -3,10 +3,6 @@
     flex-direction: column;
 }
 
-select{
-    display: block;
-    width: 100%;
-}
 .login{
     margin-top: 5%;
 }
@@ -15,12 +11,6 @@ select{
     top: -20px;
     color: red;
     font: var(--label)
-}
-.show{
-    display: block;
-}
-.hide{
-    display: none;
 }
 @media (min-width: 1025px){
     .column-container{
