@@ -17,15 +17,33 @@ var errorMsg = [];
 var allErrors = [];
 var errorDiv = document.getElementsByClassName('errorDiv')
 
+function checkNumbers(str){
+    for (let i = 0; i < str.length; i++) {
+      var charCode = str.charCodeAt(i);
+      if (charCode < 48 || charCode > 57) {
+        return false;
+      }
+    }
+    return true;
+};
+
 function validateName(){
     var errors = [];
-    var reg = /^(?!\s+$)[a-zA-Z\u00C0-\u017F\s]+$/;
-    if (firstName.value =='' || firstName.value ==null){
+    function checkLettersAndSpaces(str) {
+        for (let i = 0; i < str.length; i++) {
+          var charCode = str.charCodeAt(i);
+          if ((charCode < 65 || (charCode > 90 && charCode < 97) || charCode > 122) && charCode !== 32) {
+            return false;
+          }
+        }
+        return true;
+      }
+    if (firstName.value == '' || firstName.value == null){
         allErrors.push('Name cannot be empty')
         errorMsg.push('Name cannot be empty')
         return false
     }
-    if (!reg.test(firstName.value)){
+    if (!checkLettersAndSpaces(firstName.value)){
         allErrors.push('Name must contain letters only')
         errors.push('Name must contain letters only')
     }
@@ -34,7 +52,7 @@ function validateName(){
         errors.push('Name must be longer than 3 letters')
     }    
     if (errors.length>0){
-        errorMsg.push(errors)
+        errorMsg.push(...errors)
         return false
     }
     else{
@@ -43,22 +61,30 @@ function validateName(){
 };
 function validateLName(){
     var errors = [];
-    var reg = /^(?!\s+$)[a-zA-Z\u00C0-\u017F\s]+$/;
-    if (lastName.value =='' || lastName.value ==null){
-        allErrors.push('Last name cannot be empty')
-        errorMsg.push('Last name cannot be empty')
+    function checkLettersAndSpaces(str){
+        for (let i = 0; i < str.length; i++) {
+          const charCode = str.charCodeAt(i);
+          if ((charCode < 65 || (charCode > 90 && charCode < 97) || charCode > 122) && charCode !== 32) {
+            return false;
+          }
+        }
+        return true;
+      }
+    if (firstName.value == '' || firstName.value == null){
+        allErrors.push('Name cannot be empty')
+        errorMsg.push('Name cannot be empty')
         return false
     }
-    if (!reg.test(lastName.value)){
-        allErrors.push('Last name must contain letters only')
-        errors.push('Last name must contain letters only')
+    if (!checkLettersAndSpaces(firstName.value)){
+        allErrors.push('Name must contain letters only')
+        errors.push('Name must contain letters only')
     }
     if (lastName.value.length<3){
         allErrors.push('Last name must be longer than 3 letters')
         errors.push('Last name must be longer than 3 letters')
     }    
     if (errors.length>0){
-        errorMsg.push(errors)
+        errorMsg.push(...errors)
         return false
     }
     else{
@@ -66,25 +92,45 @@ function validateLName(){
     };
 }
 function validateDNI(){
-    var reg = /^\d{8,}$/;
+    var errors = [];
     if (dni.value =='' || dni.value ==null){
         allErrors.push('DNI cannot be empty')
         errorMsg.push('DNI cannot be empty')
         return false
     }
-    if (!reg.test(dni.value)){
-        allErrors.push('DNI must contain numbers only and be longer than 7 characters')
-        errorMsg.push('DNI must contain numbers only and be longer than 7 characters')
+    if (!checkNumbers(dni.value)){
+        allErrors.push('DNI must contain numbers only')
+        errors.push('DNI must contain numbers only')
+    }
+    if (dni.value.length < 8){
+        allErrors.push('DNI must contain more than 7 numbers')
+        errors.push('DNI must contain more than 7 numbers')
+    }
+    if (errors.length>0){
+        errorMsg.push(...errors)
         return false
     }
     else{
         return true
     };
 }
+
 function validateDOB(){
-    if (dob.value =='' || dob.value ==null){
+    console.log(dob.value)
+    var dobSplit = dob.value.split('-')
+    var year = dobSplit[0];
+    var dobArray = [dobSplit[2], dobSplit[1], dobSplit[0]];
+    var arrangedDob = JSON.stringify(dobArray);
+    console.log(arrangedDob);
+
+    if (dob.value == '' || dob.value == null){
         allErrors.push('Date of birth cannot be empty')
         errorMsg.push('Date of birth cannot be empty')
+        return false
+    }
+    if (year > 2007){
+        allErrors.push('You must be over 16 to register')
+        errorMsg.push('You must be over 16 to register')
         return false
     }
     else{
@@ -92,15 +138,22 @@ function validateDOB(){
     }
 }
 function validateNumber(){
-    var reg = /^\d{10}$/;
-    if (number.value =='' || number.value ==null){
+    var errors = [];
+    if (number.value == '' || number.value == null){
         allErrors.push('Phone number cannot be empty')
         errorMsg.push('Phone number cannot be empty')
         return false
     }
-    if (!reg.test(number.value)){
-        allErrors.push('Phone number must contain 10 digits only')
-        errorMsg.push('Phone number must contain 10 digits only')
+    if (!checkNumbers(number.value)){
+        allErrors.push('Phone number must contain numbers only')
+        errors.push('Phone number must contain numbers only')
+    }
+    if (number.value.length !== 10){
+        allErrors.push('Phone number must contain 10 digits')
+        errors.push('Phone number must contain 10 digits')
+    }
+    if (errors.length>0){
+        errorMsg.push(...errors)
         return false
     }
     else{
@@ -108,15 +161,38 @@ function validateNumber(){
     };
 };
 function validateAddress(){
-    var reg = /^(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d]{3,}\s[a-zA-Z\d]{1,}$/;
+    var errors = [];
+    function checkAddressFormat(str) {
+        let hasLetters = false;
+        let hasNumbers = false;
+        let hasSpace = false;        
+        for (let i = 0; i < str.length; i++) {
+          const charCode = str.charCodeAt(i);
+          if (charCode >= 48 && charCode <= 57) {
+            hasNumbers = true;
+          } else if ((charCode >= 65 && charCode <= 90) || (charCode >= 97 && charCode <= 122)) {
+            hasLetters = true;
+          } else if (charCode === 32) {
+            hasSpace = true;
+          }
+        }        
+        return hasLetters && hasNumbers && hasSpace;
+    }
     if (address.value == '' || address.value == null){
         allErrors.push('Address cannot be empty')
         errorMsg.push('Address cannot be empty')
         return false
     }
-    if (!reg.test(address.value)){
-        allErrors.push('Address must have "Street number" format')
-        errorMsg.push('Address must have "Street number" format')
+    if (address.value.length < 4){
+        allErrors.push('Address must be at least 5 characters long')
+        errors.push('Address must be at least 5 characters long')
+    }
+    if(!checkAddressFormat(address.value)){
+        allErrors.push('Address must be in "Street number" format')
+        errors.push('Address must be in "Street number" format')
+    }
+    if (errors.length>0){
+        errors.push(...errors)
         return false
     }
     else{
@@ -124,19 +200,31 @@ function validateAddress(){
     };
 };
 function validateCity(){
-    var reg = /^[a-zA-Z\d\s]+$/;
-    var reg2 = /\b\w*[a-zA-Z]\w*[a-zA-Z]\w*[a-zA-Z]\w*\b/;
     var errors = [];
+    function checkAlphanumberic(str) {
+        let hasLetters = false;
+        let hasNumbers = false;
+        for (let i = 0; i < str.length; i++) {
+          const charCode = str.charCodeAt(i);
+          if (charCode >= 48 && charCode <= 57) {
+            hasNumbers = true;
+          }
+          else if ((charCode >= 65 && charCode <= 90) || (charCode >= 97 && charCode <= 122)) {
+            hasLetters = true;
+        }
+        }
+        return hasLetters || hasNumbers;
+    }
     if (city.value == '' || city.value == null){
         allErrors.push('City cannot be empty')
         errorMsg.push('City cannot be empty')
         return false
     }
-    if (!reg.test(city.value)){
+    if (!checkAlphanumberic(city.value)){
         allErrors.push('City must contain letters or numbers only')
         errors.push('City must contain letters or numbers only')
     }
-    if (!reg2.test(city.value)){
+    if (city.value.length<3){
         allErrors.push('City must contain more than 3 letters')
         errors.push('City must contain more than 3 letters')
     }
@@ -149,23 +237,33 @@ function validateCity(){
     };
 };
 function validateZip(){
-    var reg = /^\d{4,5}$/;
+    var errors = [];
+    console.log(zip.value.length)
+    console.log(4)
     if (zip.value =='' || zip.value ==null){
         allErrors.push('Zip code cannot be empty')
         errorMsg.push('Zip code cannot be empty')
         return false
     }
-    if (!reg.test(zip.value)){
-        allErrors.push('Zip code must contain 4 to 5 digits only')
-        errorMsg.push('Zip code must contain 4 to 5 digits only')
+    if (!checkNumbers(zip.value)){
+        allErrors.push('Zip code must contain numbers only')
+        errors.push('Zip code must contain numbers only')
+    }
+    if (zip.value.length !== 4 && zip.value.length !== 5){
+        allErrors.push('Zip code must 4-5 numbers only')
+        errors.push('Zip code must 4-5 numbers only')
+    }
+    if (errors.length>0){
+        errorMsg.push(...errors)
         return false
     }
     else{
         return true
     };
+   
 };
 function validateEmail(){
-    var reg = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    var reg =  /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/;
     if (email.value =='' || email.value ==null){
         allErrors.push('Email address cannot be empty')
         errorMsg.push('Email address cannot be empty')
@@ -181,35 +279,53 @@ function validateEmail(){
     };
 };
 function validatePassword(){
-    var reg = /^(?=.*[A-Z]).+$/;
-    var reg2 = /^(?=.*[a-z]).+$/;
-    var reg3 = /^(?=.*\d).+$/;
-    var reg4 = /^(?=.*[!@#$%^&*()_+=[{\]};:<>|./?,-]).+$/;
-    var reg5 = /^.{8,}$/;
     var errors = [];
-
+    function hasSpecialCharacters(str) {
+        for (let i = 0; i < str.length; i++) {
+          const charCode = str.charCodeAt(i);
+          if ((charCode >= 33 && charCode <= 47) || (charCode >= 58 && charCode <= 64) || (charCode >= 91 && charCode <= 96) || (charCode >= 123 && charCode <= 126)) {
+            return true;
+          }
+        }
+        return false;
+      }
+    function hasNumber(str){
+        for (let i = 0; i < str.length; i++) {
+            const charCode = str.charCodeAt(i);
+            if (charCode >= 48 && charCode <= 57) {
+              return true;
+            }
+            else{
+                return false
+            }
+        }
+    };
+    function hasLetter(str){
+        for (let i = 0; i < str.length; i++) {
+            const charCode = str.charCodeAt(i);
+        if ((charCode >= 65 && charCode <= 90) || (charCode >= 97 && charCode <= 122)) {
+            return true;
+          }
+        }
+    }
     if (password.value == '' || password.value == null){
         allErrors.push('Password cannot be empty')
         errorMsg.push('Password cannot be empty')
         return false
     }
-    if (!reg.test(password.value)){
-        allErrors.push('At least 1 uppercase letter')
-        errors.push('At least 1 uppercase letter')
+    if (!hasLetter(password.value)){
+        allErrors.push('At least 1 letter')
+        errors.push('At least 1 letter')
     }
-    if (!reg2.test(password.value)){
-        allErrors.push('At least 1 lowercase letter')
-        errors.push('At least 1 lowercase letter')
-    }
-    if (!reg3.test(password.value)){
+    if (!hasNumber(password.value)){
         allErrors.push('At least 1 digit')
         errors.push('At least 1 digit')
     }
-    if (!reg4.test(password.value)){
+    if (!hasSpecialCharacters(password.value)){
         allErrors.push('At least 1 special character')
         errors.push('At least 1 special character')
     }
-    if (!reg5.test(password.value)){
+    if (password.value.length<8){
         allErrors.push('At least 8 characters')
         errors.push('At least 8 characters')
     }
@@ -232,7 +348,6 @@ function validateRepPassword(){
         return true
     }
 };
-
 function handleError(e, errDiv){
     e.target.style = 'border: red 1px solid';
     for(var i = 0; i < errorMsg.length; i++){
@@ -257,7 +372,6 @@ for (let j = 0; j<inputs.length; j++){
         errorDiv[j].textContent = '';
     })
 }
-
 
 send.addEventListener('click', (e)=>{
     e.preventDefault();

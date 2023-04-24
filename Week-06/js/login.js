@@ -7,8 +7,9 @@ var errorMsg = [];
 var allErrors = [];
 var errorDiv = document.getElementsByClassName('errorDiv');
 
+//Validations//
 function validateEmail(){
-    var reg = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    var reg = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/;
     if (email.value =='' || email.value ==null){
         errorMsg.push('Email address cannot be empty')
         return false
@@ -22,34 +23,53 @@ function validateEmail(){
     };
 };
 function validatePassword(){
-    var reg = /^(?=.*[A-Z]).+$/;
-    var reg2 = /^(?=.*[a-z]).+$/;
-    var reg3 = /^(?=.*\d).+$/;
-    var reg4 = /^(?=.*[!@#$%^&*()_+=[{\]};:<>|./?,-]).+$/;
-    var reg5 = /^.{8,}$/;
     var errors = [];
+    function hasSpecialCharacters(str) {
+        for (let i = 0; i < str.length; i++) {
+          const charCode = str.charCodeAt(i);
+          if ((charCode >= 33 && charCode <= 47) || (charCode >= 58 && charCode <= 64) || (charCode >= 91 && charCode <= 96) || (charCode >= 123 && charCode <= 126)) {
+            return true;
+          }
+        }
+        return false;
+      }
+    function hasNumber(str){
+        for (let i = 0; i < str.length; i++) {
+            const charCode = str.charCodeAt(i);
+            if (charCode >= 48 && charCode <= 57) {
+              return true;
+            }
+            else{
+                return false
+            }
+        }
+    };
+    function hasLetter(str){
+        for (let i = 0; i < str.length; i++) {
+            const charCode = str.charCodeAt(i);
+        if ((charCode >= 65 && charCode <= 90) || (charCode >= 97 && charCode <= 122)) {
+            return true;
+          }
+        }
+    }
     if (password.value == '' || password.value == null){
         allErrors.push('Password cannot be empty')
         errorMsg.push('Password cannot be empty')
         return false
     }
-    if (!reg.test(password.value)){
-        allErrors.push('At least 1 uppercase letter')
-        errors.push('At least 1 uppercase letter')
+    if (!hasLetter(password.value)){
+        allErrors.push('At least 1 letter')
+        errors.push('At least 1 letter')
     }
-    if (!reg2.test(password.value)){
-        allErrors.push('At least 1 lowercase letter')
-        errors.push('At least 1 lowercase letter')
-    }
-    if (!reg3.test(password.value)){
+    if (!hasNumber(password.value)){
         allErrors.push('At least 1 digit')
         errors.push('At least 1 digit')
     }
-    if (!reg4.test(password.value)){
+    if (!hasSpecialCharacters(password.value)){
         allErrors.push('At least 1 special character')
         errors.push('At least 1 special character')
     }
-    if (!reg5.test(password.value)){
+    if (password.value.length<8){
         allErrors.push('At least 8 characters')
         errors.push('At least 8 characters')
     }
@@ -63,6 +83,7 @@ function validatePassword(){
     };
 };
 
+// Handle errors //
 function handleError(e, errDiv){
     e.target.style = 'border: red 1px solid';
     for(var i = 0; i < errorMsg.length; i++){
@@ -106,25 +127,3 @@ send.addEventListener('click', (e)=>{
     }    
     alert(JSON.stringify(inputValues) + allErrors)
 })
-
-/*email.addEventListener("blur", (e)=>{
-    if (!validateEmail()){
-        handleError(e, 0)
-    }
-});
-password.addEventListener("blur", (e)=>{
-    if (!validatePassword()){
-        handleError(e, 1)
-    }
-});
-
-email.addEventListener('focus', (e)=>{
-    errorMsg = [];
-    e.target.style = 'border: gray 1px solid';
-    errorDiv[0].textContent = '';
-});
-password.addEventListener('focus', (e)=>{
-    errorMsg = [];
-    e.target.style = 'border: gray 1px solid';
-    errorDiv[1].textContent = '';
-});*/
