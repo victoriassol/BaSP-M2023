@@ -10,37 +10,27 @@ aside{
     min-width: 300px;
     background-color: #AACE9B;
 }
-
 .fake-aside{
     display: none;
     width: 20%;
     min-width: 300px;
     height: 100%;
 }
-
 nav img{
     padding-right: 10px;
 }
-
 .button-nav{
     width: 263px;
     height: 37.69px;
     margin: auto;
     margin-top: 15px;
-    text-align: left;
+    text-align: center;
     border: 1.5px solid #373867;
     border-radius: 5px;
     font: var(--aside-button);
-    line-height: 37.69px;    
+    line-height: 37.69px;
     background-color: white;
 }
-
-.button-nav a{
-    margin-left: 80px;
-    text-decoration: none;
-    color: #373867;
-}
-
 .contact-info{
     margin-bottom: 40%
 }
@@ -69,7 +59,7 @@ nav img{
 
 #icon-phone{
     width: 20px;
-    height: 20px;    
+    height: 20px;
     transform:perspective(-45);
 }
 
