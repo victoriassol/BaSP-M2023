@@ -15,5 +15,5 @@ https://victoriassol.github.io/BaSP-M2023/
 
 #### Week 05. Solving 6 Javascript exercises
 https://victoriassol.github.io/BaSP-M2023/Week-05/index.html
-Week 06. Creating the sign in/sign up validations.
-https://victoriassol.github.io/BaSP-M2023/Week-06/index.html
+### Week 06. Creating the sign in/sign up validations.
+https://victoriassol.github.io/BaSP-M2023/Week-06/views/index.html
