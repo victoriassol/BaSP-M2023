@@ -124,6 +124,6 @@ send.addEventListener('click', (e)=>{
             inputs[i].style = 'border: red 1px solid';
             errorDiv[i].innerHTML += `Field cannot be empty`
         }
-    }    
+    }
     alert(JSON.stringify(inputValues) + allErrors)
 })

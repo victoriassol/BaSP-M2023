@@ -16,7 +16,6 @@ var validations = [validateName, validateLName, validateDNI, validateDOB, valida
 var errorMsg = [];
 var allErrors = [];
 var errorDiv = document.getElementsByClassName('errorDiv')
-
 function checkNumbers(str){
     for (let i = 0; i < str.length; i++) {
       var charCode = str.charCodeAt(i);
@@ -27,6 +26,7 @@ function checkNumbers(str){
     return true;
 };
 
+//Validations//
 function validateName(){
     var errors = [];
     function checkLettersAndSpaces(str) {
@@ -50,7 +50,7 @@ function validateName(){
     if (firstName.value.length<3){
         allErrors.push('Name must be longer than 3 letters')
         errors.push('Name must be longer than 3 letters')
-    }    
+    }
     if (errors.length>0){
         errorMsg.push(...errors)
         return false
@@ -82,7 +82,7 @@ function validateLName(){
     if (lastName.value.length<3){
         allErrors.push('Last name must be longer than 3 letters')
         errors.push('Last name must be longer than 3 letters')
-    }    
+    }
     if (errors.length>0){
         errorMsg.push(...errors)
         return false
@@ -165,7 +165,7 @@ function validateAddress(){
     function checkAddressFormat(str) {
         let hasLetters = false;
         let hasNumbers = false;
-        let hasSpace = false;        
+        let hasSpace = false;
         for (let i = 0; i < str.length; i++) {
           const charCode = str.charCodeAt(i);
           if (charCode >= 48 && charCode <= 57) {
@@ -175,7 +175,7 @@ function validateAddress(){
           } else if (charCode === 32) {
             hasSpace = true;
           }
-        }        
+        }
         return hasLetters && hasNumbers && hasSpace;
     }
     if (address.value == '' || address.value == null){
@@ -260,7 +260,7 @@ function validateZip(){
     else{
         return true
     };
-   
+
 };
 function validateEmail(){
     var reg =  /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/;
@@ -373,6 +373,7 @@ for (let j = 0; j<inputs.length; j++){
     })
 }
 
+//Submit//
 send.addEventListener('click', (e)=>{
     e.preventDefault();
     for (let i = 0; i<inputs.length; i++){
@@ -389,6 +390,6 @@ send.addEventListener('click', (e)=>{
             inputs[i].style = 'border: red 1px solid';
             errorDiv[i].innerHTML += `Field cannot be empty`
         }
-    }    
+    }
     alert(JSON.stringify(inputValues) + allErrors)
 })
