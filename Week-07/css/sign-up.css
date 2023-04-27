@@ -1,0 +1,24 @@
+.signup-column-1, .signup-column-2{
+    display: flex;
+    flex-direction: column;
+}
+
+.login{
+    margin-top: 5%;
+}
+.errorDiv{
+    position: relative;
+    top: -20px;
+    color: red;
+    font: var(--label)
+}
+@media (min-width: 1025px){
+    .column-container{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .signup-column-1, .signup-column-2{
+        width: 45%;
+    }
+}

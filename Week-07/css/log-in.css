@@ -1,0 +1,39 @@
+main{
+    margin-top: 80px;
+    padding: 10%;
+}
+h2{
+    margin-bottom: 8%;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    border: 1px solid gray;
+    padding: 10%;
+    text-align: left;
+    color: #373867;
+}
+label{
+    margin-bottom: 10px;
+    font: var(--label);
+}
+.forgot{
+    margin-top: 20%;
+    font: var(--label);
+}
+.remember-me{
+    display: flex;
+}
+#remember-me{
+    height:fit-content;
+    margin: 0;
+    margin-right: 2%;
+}
+.h-center{
+    display: inline-block;
+    align-self: center;
+}
+.submit{
+    margin-top: 5%;
+}
