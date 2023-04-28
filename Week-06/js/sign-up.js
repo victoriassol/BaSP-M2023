@@ -154,7 +154,7 @@ function validateNumber(){
         return false
     }
     else{
-        console.log(number.value) 
+        console.log(number.value)
         return true
     };
 };
@@ -364,7 +364,7 @@ var url= `https://api-rest-server.vercel.app/signup`
 //Submit//
 send.addEventListener('click', (e)=>{
     e.preventDefault();
-    /*for (let i = 0; i<inputs.length; i++){
+    for (let i = 0; i<inputs.length; i++){
         errorDiv[i].innerHTML = ''
     }
     let values = [];
@@ -379,7 +379,7 @@ send.addEventListener('click', (e)=>{
             errorDiv[i].innerHTML += `Field cannot be empty`
         }
     }
-    alert(JSON.stringify(inputValues) + allErrors)*/
+
     var allTrue = validations.every(val => val())
     if (allTrue){
         fetch(`https://api-rest-server.vercel.app/signup?name=${firstName.value}&lastName=${lastName.value}&dni=${dni.value}&dob=${dobValue}&phone=${number.value}&address=${address.value}&&city=${city.value}&&zip=${zip.value}&&email=${email.value}&&password=${password.value}`)
@@ -389,12 +389,28 @@ send.addEventListener('click', (e)=>{
             keys.forEach((key)=>{
                 localStorage.setItem(key, json.data[key])
             })
-            
         }
-
         )
         .catch(err=>console.log(err))
     }
 })
 
-//Check all inputs are valid//
+
+window.onload = ()=>{
+    let splitStorageDob = localStorage.dob.split('/')
+    let storageDob = [splitStorageDob[2], splitStorageDob[0], splitStorageDob[1]].join('-');
+    firstName.value = localStorage.name;
+    lastName.value = localStorage.lastName;
+    dni.value = localStorage.dni;
+    dob.value = storageDob;
+    number.value = localStorage.phone;
+    address.value = localStorage.address;
+    city.value = localStorage.city;
+    zip.value = localStorage.zip;
+    email.value = localStorage.email;
+    password.value = localStorage.password;
+    repPassword.value = localStorage.password;
+    console.log(localStorage)
+    console.log(localStorage.dob.split('/'))
+    
+}
