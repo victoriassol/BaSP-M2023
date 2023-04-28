@@ -102,9 +102,9 @@ function validateDNI(){
         allErrors.push('DNI must contain numbers only')
         errors.push('DNI must contain numbers only')
     }
-    if (dni.value.length < 8){
-        allErrors.push('DNI must contain more than 7 numbers')
-        errors.push('DNI must contain more than 7 numbers')
+    if (dni.value.length !== 8 && dni.value.length !== 7){
+        allErrors.push('DNI must contain 7 or 8 numbers')
+        errors.push('DNI must contain 7 or 8 numbers')
     }
     if (errors.length>0){
         errorMsg.push(...errors)
@@ -114,15 +114,12 @@ function validateDNI(){
         return true
     };
 }
-
+var dobValue = ''
 function validateDOB(){
-    console.log(dob.value)
     var dobSplit = dob.value.split('-')
     var year = dobSplit[0];
-    var dobArray = [dobSplit[2], dobSplit[1], dobSplit[0]];
-    var arrangedDob = JSON.stringify(dobArray);
-    console.log(arrangedDob);
-
+    let dobArray = [dobSplit[2], dobSplit[1], dobSplit[0]];
+    dobValue = dobArray.join('/');
     if (dob.value == '' || dob.value == null){
         allErrors.push('Date of birth cannot be empty')
         errorMsg.push('Date of birth cannot be empty')
@@ -157,27 +154,30 @@ function validateNumber(){
         return false
     }
     else{
+        console.log(number.value) 
         return true
     };
 };
 function validateAddress(){
     var errors = [];
     function checkAddressFormat(str) {
-        let hasLetters = false;
-        let hasNumbers = false;
-        let hasSpace = false;
+        let letterCount = 0;
+        let numberCount = 0;
+        let spaceFound = false;
+
         for (let i = 0; i < str.length; i++) {
-          const charCode = str.charCodeAt(i);
-          if (charCode >= 48 && charCode <= 57) {
-            hasNumbers = true;
-          } else if ((charCode >= 65 && charCode <= 90) || (charCode >= 97 && charCode <= 122)) {
-            hasLetters = true;
-          } else if (charCode === 32) {
-            hasSpace = true;
-          }
+            let char = str.charAt(i);
+            if (char >= '0' && char <= '9') {
+                numberCount++;
+            } else if (char >= 'a' && char <= 'z' || char >= 'A' && char <= 'Z') {
+                letterCount++;
+            } else if (char === ' ') {
+                spaceFound = true;
+            }
         }
-        return hasLetters && hasNumbers && hasSpace;
+        return letterCount >= 3 && numberCount >= 1 && spaceFound;
     }
+
     if (address.value == '' || address.value == null){
         allErrors.push('Address cannot be empty')
         errorMsg.push('Address cannot be empty')
@@ -192,7 +192,8 @@ function validateAddress(){
         errors.push('Address must be in "Street number" format')
     }
     if (errors.length>0){
-        errors.push(...errors)
+        errorMsg.push(...errors)
+        console.log(errors)
         return false
     }
     else{
@@ -238,8 +239,6 @@ function validateCity(){
 };
 function validateZip(){
     var errors = [];
-    console.log(zip.value.length)
-    console.log(4)
     if (zip.value =='' || zip.value ==null){
         allErrors.push('Zip code cannot be empty')
         errorMsg.push('Zip code cannot be empty')
@@ -280,23 +279,11 @@ function validateEmail(){
 };
 function validatePassword(){
     var errors = [];
-    function hasSpecialCharacters(str) {
-        for (let i = 0; i < str.length; i++) {
-          const charCode = str.charCodeAt(i);
-          if ((charCode >= 33 && charCode <= 47) || (charCode >= 58 && charCode <= 64) || (charCode >= 91 && charCode <= 96) || (charCode >= 123 && charCode <= 126)) {
-            return true;
-          }
-        }
-        return false;
-      }
     function hasNumber(str){
         for (let i = 0; i < str.length; i++) {
             const charCode = str.charCodeAt(i);
             if (charCode >= 48 && charCode <= 57) {
               return true;
-            }
-            else{
-                return false
             }
         }
     };
@@ -321,10 +308,6 @@ function validatePassword(){
         allErrors.push('At least 1 digit')
         errors.push('At least 1 digit')
     }
-    if (!hasSpecialCharacters(password.value)){
-        allErrors.push('At least 1 special character')
-        errors.push('At least 1 special character')
-    }
     if (password.value.length<8){
         allErrors.push('At least 8 characters')
         errors.push('At least 8 characters')
@@ -339,6 +322,11 @@ function validatePassword(){
     };
 };
 function validateRepPassword(){
+    if (password.value == '' || password.value == null){
+        allErrors.push('Password cannot be empty')
+        errorMsg.push('Password cannot be empty')
+        return false
+    }
     if (repPassword.value !== password.value){
         allErrors.push('Passwords do not match')
         errorMsg.push('Passwords do not match')
@@ -372,11 +360,11 @@ for (let j = 0; j<inputs.length; j++){
         errorDiv[j].textContent = '';
     })
 }
-
+var url= `https://api-rest-server.vercel.app/signup`
 //Submit//
 send.addEventListener('click', (e)=>{
     e.preventDefault();
-    for (let i = 0; i<inputs.length; i++){
+    /*for (let i = 0; i<inputs.length; i++){
         errorDiv[i].innerHTML = ''
     }
     let values = [];
@@ -391,5 +379,22 @@ send.addEventListener('click', (e)=>{
             errorDiv[i].innerHTML += `Field cannot be empty`
         }
     }
-    alert(JSON.stringify(inputValues) + allErrors)
+    alert(JSON.stringify(inputValues) + allErrors)*/
+    var allTrue = validations.every(val => val())
+    if (allTrue){
+        fetch(`https://api-rest-server.vercel.app/signup?name=${firstName.value}&lastName=${lastName.value}&dni=${dni.value}&dob=${dobValue}&phone=${number.value}&address=${address.value}&&city=${city.value}&&zip=${zip.value}&&email=${email.value}&&password=${password.value}`)
+        .then(res=> res.json())
+        .then((json)=>{console.log(json)
+            let keys = Object.keys(json.data)
+            keys.forEach((key)=>{
+                localStorage.setItem(key, json.data[key])
+            })
+            
+        }
+
+        )
+        .catch(err=>console.log(err))
+    }
 })
+
+//Check all inputs are valid//
