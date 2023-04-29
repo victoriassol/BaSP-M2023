@@ -380,22 +380,30 @@ send.addEventListener('click', (e)=>{
         }
     }
 
-    var allTrue = validations.every(val => val())
+    var allTrue = validations.every(val => val());
     if (allTrue){
         fetch(`https://api-rest-server.vercel.app/signup?name=${firstName.value}&lastName=${lastName.value}&dni=${dni.value}&dob=${dobValue}&phone=${number.value}&address=${address.value}&&city=${city.value}&&zip=${zip.value}&&email=${email.value}&&password=${password.value}`)
-        .then(res=> res.json())
+        .then((res)=> {
+            if (!res.ok){
+                throw new Error('Ups!');
+                }
+            return res.json();
+            }
+        )
         .then((json)=>{console.log(json)
             let keys = Object.keys(json.data)
             keys.forEach((key)=>{
                 localStorage.setItem(key, json.data[key])
             })
+
         }
+
         )
         .catch(err=>console.log(err))
     }
 })
 
-
+//Autofill form with localStorage information//
 window.onload = ()=>{
     let splitStorageDob = localStorage.dob.split('/')
     let storageDob = [splitStorageDob[2], splitStorageDob[0], splitStorageDob[1]].join('-');
@@ -410,7 +418,4 @@ window.onload = ()=>{
     email.value = localStorage.email;
     password.value = localStorage.password;
     repPassword.value = localStorage.password;
-    console.log(localStorage)
-    console.log(localStorage.dob.split('/'))
-    
 }
