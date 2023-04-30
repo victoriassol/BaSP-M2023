@@ -151,6 +151,8 @@ send.addEventListener("click", (e) => {
       });
   }
 });
+
+//Close modal//
 modalOk.addEventListener("click", () => {
   modal.style.display = "none";
 });

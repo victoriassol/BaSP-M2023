@@ -40,6 +40,11 @@ var validations = [
 var errorMsg = [];
 var allErrors = [];
 var errorDiv = document.getElementsByClassName("errorDiv");
+var modal = document.getElementsByClassName("modal-background")[0];
+var modalP = document.getElementsByClassName("modal-p")[0];
+var modalTitle = document.getElementsByClassName("modal-h3")[0];
+var modalOk = document.getElementsByClassName("modal-ok")[0];
+
 function checkNumbers(str) {
   for (let i = 0; i < str.length; i++) {
     var charCode = str.charCodeAt(i);
@@ -385,7 +390,7 @@ for (let j = 0; j < inputs.length; j++) {
     errorDiv[j].textContent = "";
   });
 }
-var url = `https://api-rest-server.vercel.app/signup`;
+
 //Submit//
 send.addEventListener("click", (e) => {
   e.preventDefault();
@@ -414,21 +419,31 @@ send.addEventListener("click", (e) => {
         return res.json();
       })
       .then((json) => {
+        console.log(json);
         if (!json.success) {
-          var resErrors = "";
-          for (let i = 0; i < json.errors.length; i++) {
-            resErrors += ` ${json.errors[i].msg}`;
+          if (json.errors !== undefined) {
+            if (json.errors.length > 0) {
+              var resErrors = "";
+              for (let i = 0; i < json.errors.length; i++) {
+                resErrors += ` ${json.errors[i].msg}`;
+              }
+              throw new Error("Ups! " + resErrors);
+            }
           }
-          throw new Error("Ups! " + resErrors);
+          throw new Error("Ups! " + json.msg);
         } else {
-          let keys = Object.keys(json.data);
-          keys.forEach((key) => {
-            localStorage.setItem(key, json.data[key]);
-          });
-          alert(json.msg);
+          modalTitle.innerHTML = "Sign up successful";
+          modalP.innerHTML = json.msg;
+          modal.style.display = "block";
+          modalOk.style.backgroundColor = "#AACE9B";
+          modalOk.style.color = "#373867";
+          modalTitle.style.color = "#49A37B";
         }
       })
-      .catch((err) => alert(err));
+      .catch((err) => {
+        modal.style.display = "block";
+        modalP.innerHTML = err;
+      });
   }
 });
 
@@ -452,3 +467,8 @@ window.onload = () => {
   password.value = localStorage.password;
   repPassword.value = localStorage.password;
 };
+
+//Close modal//
+modalOk.addEventListener("click", () => {
+    modal.style.display = "none";
+  });
