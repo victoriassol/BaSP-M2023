@@ -24,23 +24,11 @@ function validateEmail(){
 };
 function validatePassword(){
     var errors = [];
-    function hasSpecialCharacters(str) {
-        for (let i = 0; i < str.length; i++) {
-          const charCode = str.charCodeAt(i);
-          if ((charCode >= 33 && charCode <= 47) || (charCode >= 58 && charCode <= 64) || (charCode >= 91 && charCode <= 96) || (charCode >= 123 && charCode <= 126)) {
-            return true;
-          }
-        }
-        return false;
-      }
     function hasNumber(str){
         for (let i = 0; i < str.length; i++) {
             const charCode = str.charCodeAt(i);
             if (charCode >= 48 && charCode <= 57) {
               return true;
-            }
-            else{
-                return false
             }
         }
     };
@@ -64,10 +52,6 @@ function validatePassword(){
     if (!hasNumber(password.value)){
         allErrors.push('At least 1 digit')
         errors.push('At least 1 digit')
-    }
-    if (!hasSpecialCharacters(password.value)){
-        allErrors.push('At least 1 special character')
-        errors.push('At least 1 special character')
     }
     if (password.value.length<8){
         allErrors.push('At least 8 characters')
@@ -125,5 +109,30 @@ send.addEventListener('click', (e)=>{
             errorDiv[i].innerHTML += `Field cannot be empty`
         }
     }
-    alert(JSON.stringify(inputValues) + allErrors)
+    var allTrue = validations.every(val => val());
+    if (allTrue){
+        fetch(`https://api-rest-server.vercel.app/login?email=${email.value}&password=${password.value}`)
+        .then((res)=> {
+                return res.json();
+            }
+        )
+        .then((json)=>{
+            console.log(json)
+            if (!json.success){
+                if (json.errors.length > 0){
+                    var resErrors = ''
+                    for (let i = 0; i<json.errors.length; i++){
+                    resErrors += ` ${json.errors[i].msg}`
+                }
+                throw new Error('Ups! ' + resErrors)
+                }
+                throw new Error('Ups! ' + json.msg)
+            }
+            else{
+                alert(json.msg)
+            }
+        }
+        )
+        .catch(err=>alert(err))
+    }
 })
