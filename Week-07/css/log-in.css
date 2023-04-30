@@ -1,4 +1,5 @@
 main{
+    position: relative;
     margin-top: 80px;
     padding: 10%;
 }
@@ -36,4 +37,58 @@ label{
 }
 .submit{
     margin-top: 5%;
+}
+.modal-background{
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+.modal{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 65%;
+    max-width: 350px;
+    padding: 2%;
+    border-radius: 5px;
+    background-color: white;
+}
+.modal-h3{
+    font: var(--component-title);
+    color: red;
+}
+.modal-p{
+    font: var(--label);
+    padding-top: 4%;
+    padding-bottom: 4%;
+}
+.modal-ok{
+    width: fit-content;
+    max-width: 66px;
+    padding: 2% 4% 2% 4%;
+    border: 0;
+    border-radius: 5px;
+    text-align: center;
+    margin-left: auto;
+    background-color: red;
+    color: white;
+    font: var(--button);
+    font-size: 0.8rem;
+}
+@media (min-width: 1025px){
+    .modal{
+        top: 50%;
+        left: 60%;
+        transform: translate(-60%, -50%);
+    }
 }

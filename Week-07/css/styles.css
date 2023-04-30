@@ -163,7 +163,7 @@ input::placeholder{
         padding: 2%;
         padding-bottom: 0;
     }
-    textarea{        
+    textarea{
         margin-bottom: 0;
     }
     #section-activities img{
@@ -178,7 +178,7 @@ input::placeholder{
     }
 }
 
-@media (min-width: 1025px){ 
+@media (min-width: 1025px){
     #hamburger{
         display: none;
     }
