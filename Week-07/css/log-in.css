@@ -59,6 +59,7 @@ label{
     transform: translate(-50%, -50%);
     width: 65%;
     max-width: 350px;
+    height: fit-content;
     padding: 2%;
     border-radius: 5px;
     background-color: white;

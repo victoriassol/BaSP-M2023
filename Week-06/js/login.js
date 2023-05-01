@@ -127,3 +127,5 @@ send.addEventListener('click', (e)=>{
     }
     alert(JSON.stringify(inputValues) + allErrors)
 })
+
+

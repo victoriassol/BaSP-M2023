@@ -184,7 +184,6 @@ function validateNumber() {
     errorMsg.push(...errors);
     return false;
   } else {
-    console.log(number.value);
     return true;
   }
 }
@@ -223,7 +222,6 @@ function validateAddress() {
   }
   if (errors.length > 0) {
     errorMsg.push(...errors);
-    console.log(errors);
     return false;
   } else {
     return true;
@@ -412,14 +410,18 @@ send.addEventListener("click", (e) => {
 
   var allTrue = validations.every((val) => val());
   if (allTrue) {
-    fetch(
-      `https://api-rest-server.vercel.app/signup?name=${firstName.value}&lastName=${lastName.value}&dni=${dni.value}&dob=${dobValue}&phone=${number.value}&address=${address.value}&&city=${city.value}&&zip=${zip.value}&&email=${email.value}&&password=${password.value}`
-    )
+    let inputValues = [];
+    for (let i = 0; i < inputs.length; i++) {
+      inputValues.push(inputs[i].name + ": " + inputs[i].value);
+    }
+    let url = 'https://api-rest-server.vercel.app/signup?'
+    let firstQueries = `name=${firstName.value}&lastName=${lastName.value}&dni=${dni.value}&dob=${dobValue}&phone=${number.value}`;
+    let secondQueries = `&address=${address.value}&&city=${city.value}&&zip=${zip.value}&&email=${email.value}&&password=${password.value}`;
+    fetch(url+firstQueries+secondQueries)
       .then((res) => {
         return res.json();
       })
       .then((json) => {
-        console.log(json);
         if (!json.success) {
           if (json.errors !== undefined) {
             if (json.errors.length > 0) {
@@ -433,7 +435,7 @@ send.addEventListener("click", (e) => {
           throw new Error("Ups! " + json.msg);
         } else {
           modalTitle.innerHTML = "Sign up successful";
-          modalP.innerHTML = json.msg;
+          modalP.innerHTML = json.msg + " " + inputValues;
           modal.style.display = "block";
           modalOk.style.backgroundColor = "#AACE9B";
           modalOk.style.color = "#373867";
@@ -442,7 +444,7 @@ send.addEventListener("click", (e) => {
       })
       .catch((err) => {
         modal.style.display = "block";
-        modalP.innerHTML = err;
+        modalP.innerHTML = err + " " + inputValues;
       });
   }
 });

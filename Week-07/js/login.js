@@ -10,6 +10,7 @@ var modal = document.getElementsByClassName("modal-background")[0];
 var modalP = document.getElementsByClassName("modal-p")[0];
 var modalTitle = document.getElementsByClassName("modal-h3")[0];
 var modalOk = document.getElementsByClassName("modal-ok")[0];
+
 //Validations//
 function validateEmail() {
   var reg = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/;
@@ -117,6 +118,10 @@ send.addEventListener("click", (e) => {
   }
   var allTrue = validations.every((val) => val());
   if (allTrue) {
+    let inputValues = [];
+    for (let i = 0; i < inputs.length; i++) {
+      inputValues.push(inputs[i].name + ": " + inputs[i].value);
+    }
     fetch(
       `https://api-rest-server.vercel.app/login?email=${email.value}&password=${password.value}`
     )
@@ -124,7 +129,6 @@ send.addEventListener("click", (e) => {
         return res.json();
       })
       .then((json) => {
-        console.log(json);
         if (!json.success) {
           if (json.errors !== undefined) {
             if (json.errors.length > 0) {
@@ -138,7 +142,7 @@ send.addEventListener("click", (e) => {
           throw new Error("Ups! " + json.msg);
         } else {
           modalTitle.innerHTML = "Login successful";
-          modalP.innerHTML = json.msg;
+          modalP.innerHTML = json.msg + " " + inputValues;
           modal.style.display = "block";
           modalOk.style.backgroundColor = "#AACE9B";
           modalOk.style.color = "#373867";
@@ -147,7 +151,7 @@ send.addEventListener("click", (e) => {
       })
       .catch((err) => {
         modal.style.display = "block";
-        modalP.innerHTML = err;
+        modalP.innerHTML = err + " " + inputValues;
       });
   }
 });
