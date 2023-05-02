@@ -440,6 +440,10 @@ send.addEventListener("click", (e) => {
           modalOk.style.backgroundColor = "#AACE9B";
           modalOk.style.color = "#373867";
           modalTitle.style.color = "#49A37B";
+          let keys = Object.keys(json.data)
+            keys.forEach((key)=>{
+                localStorage.setItem(key, json.data[key])
+            })
         }
       })
       .catch((err) => {
