@@ -150,7 +150,7 @@ var dobValue = "";
 function validateDOB() {
   var dobSplit = dob.value.split("-");
   var year = dobSplit[0];
-  let dobArray = [dobSplit[2], dobSplit[1], dobSplit[0]];
+  let dobArray = [dobSplit[1], dobSplit[2], dobSplit[0]];
   dobValue = dobArray.join("/");
   if (dob.value == "" || dob.value == null) {
     allErrors.push("Date of birth cannot be empty");
@@ -422,7 +422,10 @@ send.addEventListener("click", (e) => {
         return res.json();
       })
       .then((json) => {
+        console.log(json)
         if (!json.success) {
+          console.log(dob.value);
+          console.log(dobValue);
           if (json.errors !== undefined) {
             if (json.errors.length > 0) {
               var resErrors = "";
